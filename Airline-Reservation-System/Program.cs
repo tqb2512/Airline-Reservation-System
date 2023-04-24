@@ -1,3 +1,5 @@
+using Airline_Reservation_System.Forms;
+
 namespace Airline_Reservation_System
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace Airline_Reservation_System
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Revenue());
         }
     }
 }
