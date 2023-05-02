@@ -31,9 +31,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.usernameTextbox = new Krypton.Toolkit.KryptonTextBox();
+            this.passwordTextbox = new Krypton.Toolkit.KryptonTextBox();
+            this.confirmButton = new Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,9 +46,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.76063F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.kryptonTextBox1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.kryptonTextBox2, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.kryptonButton1, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.usernameTextbox, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.passwordTextbox, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.confirmButton, 2, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -85,31 +85,32 @@
             this.label2.Text = "Mật khẩu";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // kryptonTextBox1
+            // usernameTextbox
             // 
-            this.kryptonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox1.Location = new System.Drawing.Point(315, 140);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(304, 35);
-            this.kryptonTextBox1.TabIndex = 2;
+            this.usernameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.usernameTextbox.Location = new System.Drawing.Point(315, 141);
+            this.usernameTextbox.Name = "usernameTextbox";
+            this.usernameTextbox.Size = new System.Drawing.Size(304, 35);
+            this.usernameTextbox.TabIndex = 2;
             // 
-            // kryptonTextBox2
+            // passwordTextbox
             // 
-            this.kryptonTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox2.Location = new System.Drawing.Point(315, 246);
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(304, 35);
-            this.kryptonTextBox2.TabIndex = 3;
+            this.passwordTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordTextbox.Location = new System.Drawing.Point(315, 247);
+            this.passwordTextbox.Name = "passwordTextbox";
+            this.passwordTextbox.Size = new System.Drawing.Size(304, 35);
+            this.passwordTextbox.TabIndex = 3;
             // 
-            // kryptonButton1
+            // confirmButton
             // 
-            this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(461, 321);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(158, 44);
-            this.kryptonButton1.TabIndex = 4;
-            this.kryptonButton1.Values.Text = "Đăng nhập";
+            this.confirmButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.confirmButton.CornerRoundingRadius = -1F;
+            this.confirmButton.Location = new System.Drawing.Point(461, 321);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(158, 44);
+            this.confirmButton.TabIndex = 4;
+            this.confirmButton.Values.Text = "Đăng nhập";
+            this.confirmButton.Click += new System.EventHandler(this.confirm_Click);
             // 
             // LoginForm
             // 
@@ -131,8 +132,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
         private Label label2;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonTextBox usernameTextbox;
+        private Krypton.Toolkit.KryptonTextBox passwordTextbox;
+        private Krypton.Toolkit.KryptonButton confirmButton;
     }
 }

@@ -17,11 +17,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Krypton.Docking" Version="70.22.11.312" />
     <PackageReference Include="Krypton.Navigator" Version="70.22.11.312" />
     <PackageReference Include="Krypton.Toolkit" Version="70.22.11.312" />
     <PackageReference Include="Krypton.Toolkit.Suite.Extended.Common" Version="70.23.1.5" />
+    <PackageReference Include="Krypton.Toolkit.Suite.Extended.Navigator" Version="70.23.1.5" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Krypton.Workspace" Version="70.22.11.312" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '17.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>

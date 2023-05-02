@@ -15,6 +15,14 @@ namespace Airline_Reservation_System
         public FlightManagementForm()
         {
             InitializeComponent();
+            dataLoad();
+        }
+
+        private void dataLoad()
+        {
+            string query = "select * from Flight";
+            DataTable table = sqlFunction.getSqlDataTable(query);
+            flightDataGridView.DataSource = table;
         }
     }
 }
