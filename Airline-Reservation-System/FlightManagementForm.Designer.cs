@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.addFlightButton = new Krypton.Toolkit.KryptonButton();
             this.flightDataGridView = new Krypton.Toolkit.KryptonDataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flightDataGridView)).BeginInit();
@@ -42,7 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.kryptonButton1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.addFlightButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flightDataGridView, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -52,15 +52,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1052, 662);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // kryptonButton1
+            // addFlightButton
             // 
-            this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(816, 3);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(233, 34);
-            this.kryptonButton1.TabIndex = 0;
-            this.kryptonButton1.Values.Text = "Nhập chuyến bay mới";
+            this.addFlightButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addFlightButton.CornerRoundingRadius = -1F;
+            this.addFlightButton.Location = new System.Drawing.Point(816, 3);
+            this.addFlightButton.Name = "addFlightButton";
+            this.addFlightButton.Size = new System.Drawing.Size(233, 34);
+            this.addFlightButton.TabIndex = 0;
+            this.addFlightButton.Values.Text = "Nhập chuyến bay mới";
+            this.addFlightButton.Click += new System.EventHandler(this.addFlightButton_Click);
             // 
             // flightDataGridView
             // 
@@ -93,7 +94,7 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton addFlightButton;
         private Krypton.Toolkit.KryptonDataGridView flightDataGridView;
     }
 }

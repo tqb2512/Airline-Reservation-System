@@ -16,5 +16,17 @@ namespace Airline_Reservation_System
         {
             InitializeComponent();
         }
+
+        private void selectRouteButton_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM Route";
+            DataTable route = sqlFunction.getSqlDataTable(query);
+            using (SelectForm selectForm = new SelectForm()) 
+            {
+                selectForm.loadData(route);
+                selectForm.ShowDialog();
+                routeTextBox.Text = selectForm.selectedID;
+            }
+        }
     }
 }

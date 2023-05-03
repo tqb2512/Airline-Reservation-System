@@ -15,7 +15,13 @@ namespace Airline_Reservation_System
         public FlightManagementForm()
         {
             InitializeComponent();
-            dataLoad();
+        }
+
+        private void addFlightButton_Click(object sender, EventArgs e)
+        {
+            AddFlightForm addFlightForm = new AddFlightForm();
+            addFlightForm.ShowDialog();
+            dataLoad(); 
         }
 
         private void dataLoad()
