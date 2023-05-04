@@ -7,23 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace Airline_Reservation_System
 {
-    public partial class AddRouteForm : Form
+    public partial class AddPassengerForm : Form
     {
-        public AddRouteForm()
+        public AddPassengerForm()
         {
             InitializeComponent();
         }
 
-        private void R_Submit_Button_Click(object sender, EventArgs e)
+        private void Submit_Button_Click(object sender, EventArgs e)
         {
-            string tmpDeparture = "'" + R_Departure_TextBox.Text + "'";
-            string tmpArrival = "'" + R_Arrival_TextBox.Text + "'";
-            string tmpFlightTime = "'" + R_FlightTime_TextBox.Text + "'";
+            string tmp_name = "'" + P_Name_TextBox.Text + "'";
+            string tmp_phone = "'" + P_Phone_TextBox.Text + "'";
+            string tmp_idnumber = "'" + P_IDNumber_TextBox.Text + "'";
 
-            string query = "INSERT INTO passenger VALUES(" + tmpDeparture + "," + tmpArrival + "," + tmpFlightTime + ")";
+            string query = "INSERT INTO passenger VALUES(" + tmp_name + "," + tmp_phone + "," + tmp_idnumber + ")";
 
             sqlFunction.sqlQueryExcute(query);
 

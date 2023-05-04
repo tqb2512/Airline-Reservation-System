@@ -1,6 +1,6 @@
 ﻿namespace Airline_Reservation_System
 {
-    partial class AddRouteForm
+    partial class AddPassengerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,15 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.R_Submit_Button = new Krypton.Toolkit.KryptonButton();
+            this.P_Submit_Button = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.R_ID_TextBox = new Krypton.Toolkit.KryptonTextBox();
-            this.R_Departure_TextBox = new Krypton.Toolkit.KryptonTextBox();
-            this.R_Arrival_TextBox = new Krypton.Toolkit.KryptonTextBox();
-            this.R_FlightTime_TextBox = new Krypton.Toolkit.KryptonTextBox();
+            this.P_ID_TextBox = new Krypton.Toolkit.KryptonTextBox();
+            this.P_Name_TextBox = new Krypton.Toolkit.KryptonTextBox();
+            this.P_Phone_TextBox = new Krypton.Toolkit.KryptonTextBox();
+            this.P_IDNumber_TextBox = new Krypton.Toolkit.KryptonTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,10 +53,10 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.R_ID_TextBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.R_Departure_TextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.R_Arrival_TextBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.R_FlightTime_TextBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.P_ID_TextBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.P_Name_TextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.P_Phone_TextBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.P_IDNumber_TextBox, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -66,14 +66,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(509, 276);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.R_Submit_Button, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.P_Submit_Button, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(257, 223);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -81,15 +81,15 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(249, 50);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // R_Submit_Button
+            // P_Submit_Button
             // 
-            this.R_Submit_Button.CornerRoundingRadius = -1F;
-            this.R_Submit_Button.Location = new System.Drawing.Point(127, 3);
-            this.R_Submit_Button.Name = "R_Submit_Button";
-            this.R_Submit_Button.Size = new System.Drawing.Size(119, 44);
-            this.R_Submit_Button.TabIndex = 0;
-            this.R_Submit_Button.Values.Text = "Submit";
-            this.R_Submit_Button.Click += new System.EventHandler(this.R_Submit_Button_Click);
+            this.P_Submit_Button.CornerRoundingRadius = -1F;
+            this.P_Submit_Button.Location = new System.Drawing.Point(127, 3);
+            this.P_Submit_Button.Name = "P_Submit_Button";
+            this.P_Submit_Button.Size = new System.Drawing.Size(119, 44);
+            this.P_Submit_Button.TabIndex = 0;
+            this.P_Submit_Button.Values.Text = "Submit";
+            this.P_Submit_Button.Click += new System.EventHandler(this.Submit_Button_Click);
             // 
             // label1
             // 
@@ -100,7 +100,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Route ID:";
+            this.label1.Text = "Passenger ID:";
             // 
             // label2
             // 
@@ -111,7 +111,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(248, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Departure:";
+            this.label2.Text = "Full Name:";
             // 
             // label3
             // 
@@ -122,7 +122,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(248, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Arrival:";
+            this.label3.Text = "Phone Number:";
             // 
             // label4
             // 
@@ -133,51 +133,50 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(248, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Flight Time:";
+            this.label4.Text = "ID Number:";
             // 
-            // R_ID_TextBox
+            // P_ID_TextBox
             // 
-            this.R_ID_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.R_ID_TextBox.Location = new System.Drawing.Point(257, 14);
-            this.R_ID_TextBox.Name = "R_ID_TextBox";
-            this.R_ID_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.R_ID_TextBox.TabIndex = 5;
+            this.P_ID_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_ID_TextBox.Location = new System.Drawing.Point(257, 14);
+            this.P_ID_TextBox.Name = "P_ID_TextBox";
+            this.P_ID_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.P_ID_TextBox.TabIndex = 5;
             // 
-            // R_Departure_TextBox
+            // P_Name_TextBox
             // 
-            this.R_Departure_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.R_Departure_TextBox.Location = new System.Drawing.Point(257, 69);
-            this.R_Departure_TextBox.Name = "R_Departure_TextBox";
-            this.R_Departure_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.R_Departure_TextBox.TabIndex = 6;
+            this.P_Name_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_Name_TextBox.Location = new System.Drawing.Point(257, 69);
+            this.P_Name_TextBox.Name = "P_Name_TextBox";
+            this.P_Name_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.P_Name_TextBox.TabIndex = 6;
             // 
-            // R_Arrival_TextBox
+            // P_Phone_TextBox
             // 
-            this.R_Arrival_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.R_Arrival_TextBox.Location = new System.Drawing.Point(257, 124);
-            this.R_Arrival_TextBox.Name = "R_Arrival_TextBox";
-            this.R_Arrival_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.R_Arrival_TextBox.TabIndex = 7;
+            this.P_Phone_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_Phone_TextBox.Location = new System.Drawing.Point(257, 124);
+            this.P_Phone_TextBox.Name = "P_Phone_TextBox";
+            this.P_Phone_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.P_Phone_TextBox.TabIndex = 7;
             // 
-            // R_FlightTime_TextBox
+            // P_IDNumber_TextBox
             // 
-            this.R_FlightTime_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.R_FlightTime_TextBox.Location = new System.Drawing.Point(257, 179);
-            this.R_FlightTime_TextBox.Name = "R_FlightTime_TextBox";
-            this.R_FlightTime_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.R_FlightTime_TextBox.TabIndex = 8;
+            this.P_IDNumber_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_IDNumber_TextBox.Location = new System.Drawing.Point(257, 179);
+            this.P_IDNumber_TextBox.Name = "P_IDNumber_TextBox";
+            this.P_IDNumber_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.P_IDNumber_TextBox.TabIndex = 8;
             // 
-            // AddRouteForm
+            // AddPassengerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(533, 300);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AddRouteForm";
+            this.Name = "AddPassengerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddRouteForm";
+            this.Text = "AddPassengerForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -189,14 +188,14 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
-        private Krypton.Toolkit.KryptonButton R_Submit_Button;
+        private Krypton.Toolkit.KryptonButton P_Submit_Button;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Krypton.Toolkit.KryptonTextBox R_ID_TextBox;
-        private Krypton.Toolkit.KryptonTextBox R_Departure_TextBox;
-        private Krypton.Toolkit.KryptonTextBox R_Arrival_TextBox;
-        private Krypton.Toolkit.KryptonTextBox R_FlightTime_TextBox;
+        private Krypton.Toolkit.KryptonTextBox P_ID_TextBox;
+        private Krypton.Toolkit.KryptonTextBox P_Name_TextBox;
+        private Krypton.Toolkit.KryptonTextBox P_Phone_TextBox;
+        private Krypton.Toolkit.KryptonTextBox P_IDNumber_TextBox;
     }
 }
