@@ -39,19 +39,19 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.P_IDNumber_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.P_PhoneNumber_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.P_FullName_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.P_ID_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.deleteButton = new Krypton.Toolkit.KryptonButton();
-            this.editButton = new Krypton.Toolkit.KryptonButton();
+            this.P_deleteButton = new Krypton.Toolkit.KryptonButton();
+            this.P_editButton = new Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
@@ -128,6 +128,7 @@
             this.passengerDataGridView.RowTemplate.Height = 37;
             this.passengerDataGridView.Size = new System.Drawing.Size(955, 323);
             this.passengerDataGridView.TabIndex = 0;
+            this.passengerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.passengerDataGridView_CellContentClick);
             // 
             // tableLayoutPanel3
             // 
@@ -203,7 +204,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel10.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.textBox4, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.P_IDNumber_TextBox, 1, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(486, 61);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
@@ -221,13 +222,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "ID Number:";
             // 
-            // textBox4
+            // P_IDNumber_TextBox
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(217, 11);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(257, 27);
-            this.textBox4.TabIndex = 1;
+            this.P_IDNumber_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_IDNumber_TextBox.Location = new System.Drawing.Point(217, 11);
+            this.P_IDNumber_TextBox.Name = "P_IDNumber_TextBox";
+            this.P_IDNumber_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.P_IDNumber_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel7
             // 
@@ -235,7 +236,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel7.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.P_PhoneNumber_TextBox, 1, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 61);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
@@ -253,13 +254,13 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Phone Number:";
             // 
-            // textBox2
+            // P_PhoneNumber_TextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(217, 11);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 27);
-            this.textBox2.TabIndex = 1;
+            this.P_PhoneNumber_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_PhoneNumber_TextBox.Location = new System.Drawing.Point(217, 11);
+            this.P_PhoneNumber_TextBox.Name = "P_PhoneNumber_TextBox";
+            this.P_PhoneNumber_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.P_PhoneNumber_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel6
             // 
@@ -267,7 +268,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textBox3, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.P_FullName_TextBox, 1, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(486, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
@@ -285,13 +286,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Full Name:";
             // 
-            // textBox3
+            // P_FullName_TextBox
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(217, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 27);
-            this.textBox3.TabIndex = 1;
+            this.P_FullName_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_FullName_TextBox.Location = new System.Drawing.Point(217, 12);
+            this.P_FullName_TextBox.Name = "P_FullName_TextBox";
+            this.P_FullName_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.P_FullName_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel5
             // 
@@ -299,7 +300,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.P_ID_TextBox, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -317,13 +318,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // textBox1
+            // P_ID_TextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(217, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 27);
-            this.textBox1.TabIndex = 1;
+            this.P_ID_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.P_ID_TextBox.Location = new System.Drawing.Point(217, 12);
+            this.P_ID_TextBox.Name = "P_ID_TextBox";
+            this.P_ID_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.P_ID_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel11
             // 
@@ -331,8 +332,8 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.5F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.5F));
-            this.tableLayoutPanel11.Controls.Add(this.deleteButton, 1, 0);
-            this.tableLayoutPanel11.Controls.Add(this.editButton, 2, 0);
+            this.tableLayoutPanel11.Controls.Add(this.P_deleteButton, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.P_editButton, 2, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(486, 119);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
@@ -340,23 +341,24 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(477, 37);
             this.tableLayoutPanel11.TabIndex = 4;
             // 
-            // deleteButton
+            // P_deleteButton
             // 
-            this.deleteButton.CornerRoundingRadius = -1F;
-            this.deleteButton.Location = new System.Drawing.Point(217, 3);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(125, 31);
-            this.deleteButton.TabIndex = 0;
-            this.deleteButton.Values.Text = "Delete";
+            this.P_deleteButton.CornerRoundingRadius = -1F;
+            this.P_deleteButton.Location = new System.Drawing.Point(217, 3);
+            this.P_deleteButton.Name = "P_deleteButton";
+            this.P_deleteButton.Size = new System.Drawing.Size(125, 31);
+            this.P_deleteButton.TabIndex = 0;
+            this.P_deleteButton.Values.Text = "Delete";
+            this.P_deleteButton.Click += new System.EventHandler(this.P_deleteButton_Click);
             // 
-            // editButton
+            // P_editButton
             // 
-            this.editButton.CornerRoundingRadius = -1F;
-            this.editButton.Location = new System.Drawing.Point(348, 3);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(126, 31);
-            this.editButton.TabIndex = 1;
-            this.editButton.Values.Text = "Edit";
+            this.P_editButton.CornerRoundingRadius = -1F;
+            this.P_editButton.Location = new System.Drawing.Point(348, 3);
+            this.P_editButton.Name = "P_editButton";
+            this.P_editButton.Size = new System.Drawing.Size(126, 31);
+            this.P_editButton.TabIndex = 1;
+            this.P_editButton.Values.Text = "Edit";
             // 
             // tableLayoutPanel8
             // 
@@ -433,12 +435,12 @@
         private Label label1;
         private TableLayoutPanel tableLayoutPanel8;
         private TableLayoutPanel tableLayoutPanel9;
-        private TextBox textBox4;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox1;
+        private TextBox P_IDNumber_TextBox;
+        private TextBox P_PhoneNumber_TextBox;
+        private TextBox P_FullName_TextBox;
+        private TextBox P_ID_TextBox;
         private TableLayoutPanel tableLayoutPanel11;
-        private Krypton.Toolkit.KryptonButton deleteButton;
-        private Krypton.Toolkit.KryptonButton editButton;
+        private Krypton.Toolkit.KryptonButton P_deleteButton;
+        private Krypton.Toolkit.KryptonButton P_editButton;
     }
 }

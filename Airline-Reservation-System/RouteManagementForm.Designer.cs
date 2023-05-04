@@ -63,16 +63,16 @@
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.R_Arrival_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.R_Departure_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.R_FlightTime_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.R_ID_TextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.R_deteleButton = new Krypton.Toolkit.KryptonButton();
             this.R_editButton = new Krypton.Toolkit.KryptonButton();
@@ -447,6 +447,7 @@
             this.routeDataGridView.RowTemplate.Height = 37;
             this.routeDataGridView.Size = new System.Drawing.Size(955, 323);
             this.routeDataGridView.TabIndex = 0;
+            this.routeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.routeDataGridView_CellContentClick);
             // 
             // tableLayoutPanel12
             // 
@@ -522,7 +523,7 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel14.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.textBox5, 1, 0);
+            this.tableLayoutPanel14.Controls.Add(this.R_Arrival_TextBox, 1, 0);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(486, 61);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
@@ -538,15 +539,15 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(208, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Arrive";
+            this.label5.Text = "Arrival:";
             // 
-            // textBox5
+            // R_Arrival_TextBox
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(217, 11);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(257, 27);
-            this.textBox5.TabIndex = 1;
+            this.R_Arrival_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.R_Arrival_TextBox.Location = new System.Drawing.Point(217, 11);
+            this.R_Arrival_TextBox.Name = "R_Arrival_TextBox";
+            this.R_Arrival_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.R_Arrival_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel15
             // 
@@ -554,7 +555,7 @@
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel15.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.textBox6, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.R_Departure_TextBox, 1, 0);
             this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 61);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
@@ -572,13 +573,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Departure:";
             // 
-            // textBox6
+            // R_Departure_TextBox
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(217, 11);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(257, 27);
-            this.textBox6.TabIndex = 1;
+            this.R_Departure_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.R_Departure_TextBox.Location = new System.Drawing.Point(217, 11);
+            this.R_Departure_TextBox.Name = "R_Departure_TextBox";
+            this.R_Departure_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.R_Departure_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel16
             // 
@@ -586,7 +587,7 @@
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel16.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel16.Controls.Add(this.textBox7, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.R_FlightTime_TextBox, 1, 0);
             this.tableLayoutPanel16.Location = new System.Drawing.Point(486, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
@@ -604,13 +605,13 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Flight Time:";
             // 
-            // textBox7
+            // R_FlightTime_TextBox
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Location = new System.Drawing.Point(217, 12);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(257, 27);
-            this.textBox7.TabIndex = 1;
+            this.R_FlightTime_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.R_FlightTime_TextBox.Location = new System.Drawing.Point(217, 12);
+            this.R_FlightTime_TextBox.Name = "R_FlightTime_TextBox";
+            this.R_FlightTime_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.R_FlightTime_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel17
             // 
@@ -618,7 +619,7 @@
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel17.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.textBox8, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.R_ID_TextBox, 1, 0);
             this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
@@ -636,13 +637,13 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "ID:";
             // 
-            // textBox8
+            // R_ID_TextBox
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Location = new System.Drawing.Point(217, 12);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(257, 27);
-            this.textBox8.TabIndex = 1;
+            this.R_ID_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.R_ID_TextBox.Location = new System.Drawing.Point(217, 12);
+            this.R_ID_TextBox.Name = "R_ID_TextBox";
+            this.R_ID_TextBox.Size = new System.Drawing.Size(257, 27);
+            this.R_ID_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel18
             // 
@@ -667,6 +668,7 @@
             this.R_deteleButton.Size = new System.Drawing.Size(125, 31);
             this.R_deteleButton.TabIndex = 0;
             this.R_deteleButton.Values.Text = "Delete";
+            this.R_deteleButton.Click += new System.EventHandler(this.R_deteleButton_Click);
             // 
             // R_editButton
             // 
@@ -760,16 +762,16 @@
         private TableLayoutPanel tableLayoutPanel13;
         private TableLayoutPanel tableLayoutPanel14;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox R_Arrival_TextBox;
         private TableLayoutPanel tableLayoutPanel15;
         private Label label6;
-        private TextBox textBox6;
+        private TextBox R_Departure_TextBox;
         private TableLayoutPanel tableLayoutPanel16;
         private Label label7;
-        private TextBox textBox7;
+        private TextBox R_FlightTime_TextBox;
         private TableLayoutPanel tableLayoutPanel17;
         private Label label8;
-        private TextBox textBox8;
+        private TextBox R_ID_TextBox;
         private TableLayoutPanel tableLayoutPanel18;
         private Krypton.Toolkit.KryptonButton R_deteleButton;
         private Krypton.Toolkit.KryptonButton R_editButton;
