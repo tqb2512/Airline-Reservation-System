@@ -71,6 +71,7 @@
             this.kryptonDataGridView1.ColumnHeadersHeight = 70;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(3, 3);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
+            this.kryptonDataGridView1.RowHeadersVisible = false;
             this.kryptonDataGridView1.RowHeadersWidth = 72;
             this.kryptonDataGridView1.RowTemplate.Height = 37;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(770, 371);
