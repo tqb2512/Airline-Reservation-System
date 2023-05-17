@@ -93,6 +93,7 @@ create table reserve_ticket
 	ticket_price_id int not null,
 	passenger_id int not null,
 	date datetime not null,
+	status int not null,
 	foreign key (flight_id) references flight(flight_id),
 	foreign key (ticket_price_id) references ticket_price(ticket_price_id),
 	foreign key (passenger_id) references passenger(passenger_id),
