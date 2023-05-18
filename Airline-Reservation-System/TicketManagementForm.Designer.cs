@@ -72,7 +72,6 @@
             Search_ArrivalAP_textBox = new TextBox();
             Search_DepartureAP_textBox = new TextBox();
             Search_Ticket_ID_textBox = new TextBox();
-            kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             Search_tableLayoutPanel = new TableLayoutPanel();
             Search_Airport_Location_textBox = new TextBox();
             Search_Airport_Name_textBox = new TextBox();
@@ -87,7 +86,6 @@
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
             Search_Ticket_Information_tableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
             Search_tableLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -117,7 +115,7 @@
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(1936, 387);
+            tableLayoutPanel3.Size = new Size(1936, 249);
             tableLayoutPanel3.TabIndex = 1;
             // 
             // groupBox1
@@ -125,7 +123,7 @@
             groupBox1.Controls.Add(tableLayoutPanel4);
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(638, 381);
+            groupBox1.Size = new Size(638, 243);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin vé";
@@ -223,7 +221,7 @@
             groupBox3.Controls.Add(tableLayoutPanel6);
             groupBox3.Location = new Point(1293, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(639, 381);
+            groupBox3.Size = new Size(639, 243);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Thông tin chuyến bay";
@@ -321,7 +319,7 @@
             groupBox2.Controls.Add(tableLayoutPanel5);
             groupBox2.Location = new Point(647, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(639, 381);
+            groupBox2.Size = new Size(639, 243);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin hành khách";
@@ -430,7 +428,7 @@
             Ticket_dataGridView.RowHeadersWidth = 72;
             Ticket_dataGridView.RowTemplate.Height = 37;
             Ticket_dataGridView.ScrollBars = ScrollBars.Vertical;
-            Ticket_dataGridView.Size = new Size(1930, 768);
+            Ticket_dataGridView.Size = new Size(1930, 975);
             Ticket_dataGridView.TabIndex = 0;
             Ticket_dataGridView.CellClick += Ticket_dataGridView_CellClick;
             // 
@@ -440,14 +438,13 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel7, 0, 2);
-            tableLayoutPanel1.Controls.Add(kryptonDataGridView1, 0, 1);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel7, 0, 1);
             tableLayoutPanel1.Location = new Point(13, 13);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 65F));
             tableLayoutPanel1.Size = new Size(1942, 1296);
             tableLayoutPanel1.TabIndex = 1;
             // 
@@ -458,12 +455,12 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel7.Controls.Add(Search_Ticket_Information_tableLayoutPanel, 0, 0);
             tableLayoutPanel7.Controls.Add(Ticket_dataGridView, 0, 1);
-            tableLayoutPanel7.Location = new Point(3, 469);
+            tableLayoutPanel7.Location = new Point(3, 262);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 2;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.Size = new Size(1936, 824);
+            tableLayoutPanel7.Size = new Size(1936, 1031);
             tableLayoutPanel7.TabIndex = 3;
             // 
             // Search_Ticket_Information_tableLayoutPanel
@@ -577,17 +574,6 @@
             Search_Ticket_ID_textBox.TabIndex = 0;
             Search_Ticket_ID_textBox.TextChanged += SearchTextBox;
             // 
-            // kryptonDataGridView1
-            // 
-            kryptonDataGridView1.ColumnHeadersHeight = 92;
-            kryptonDataGridView1.Location = new Point(3, 449);
-            kryptonDataGridView1.Name = "kryptonDataGridView1";
-            kryptonDataGridView1.RowHeadersWidth = 82;
-            kryptonDataGridView1.RowTemplate.Height = 41;
-            kryptonDataGridView1.Size = new Size(480, 14);
-            kryptonDataGridView1.TabIndex = 4;
-            kryptonDataGridView1.Visible = false;
-            // 
             // Search_tableLayoutPanel
             // 
             Search_tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -644,7 +630,6 @@
             tableLayoutPanel7.ResumeLayout(false);
             Search_Ticket_Information_tableLayoutPanel.ResumeLayout(false);
             Search_Ticket_Information_tableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
             Search_tableLayoutPanel.ResumeLayout(false);
             Search_tableLayoutPanel.PerformLayout();
             ResumeLayout(false);
@@ -702,6 +687,5 @@
         private TextBox Search_ArrivalAP_textBox;
         private TextBox Search_DepartureAP_textBox;
         private TextBox Search_Ticket_ID_textBox;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
     }
 }
