@@ -207,6 +207,7 @@ namespace Airline_Reservation_System
                 Passenger_Phone_textBox.ReadOnly = true;
                 Passenger_IDnumber_textBox.ReadOnly = true;
                 Flight_ID_textBox.ReadOnly = true;
+                Passenger_ID_textBox.ReadOnly = true;
 
                 Ticket_ID_textBox.Enabled = false;
                 Passenger_Name_textBox.Enabled = false;
@@ -220,6 +221,7 @@ namespace Airline_Reservation_System
                 Passenger_Phone_textBox.Enabled = false;
                 Passenger_IDnumber_textBox.Enabled = false;
                 Flight_ID_textBox.Enabled = false;
+                Passenger_ID_textBox.Enabled = false;
             }
         }
 
