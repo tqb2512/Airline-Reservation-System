@@ -42,9 +42,9 @@ namespace Airline_Reservation_System
             Airport_dataGridView.Columns[1].Width = this.Width / 3;
             Airport_dataGridView.Columns[2].Width = this.Width / 3;
 
-            Search_Airport_ID_textBox.Width = this.Width / 3;
-            Search_Airport_Name_textBox.Width = this.Width / 3;
-            Search_Airport_Location_textBox.Width = this.Width / 3;
+            search_layout.ColumnStyles[0].Width = this.Width / 3;
+            search_layout.ColumnStyles[1].Width = this.Width / 3;
+            search_layout.ColumnStyles[2].Width = this.Width / 3;
 
             Airport_dataGridView.RowHeadersVisible = false;
 

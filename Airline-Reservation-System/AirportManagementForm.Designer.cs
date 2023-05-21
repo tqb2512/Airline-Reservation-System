@@ -31,14 +31,14 @@
             this.pos_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.Airport_dataGridView = new Krypton.Toolkit.KryptonDataGridView();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.search_layout = new System.Windows.Forms.TableLayoutPanel();
             this.Search_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Search_Airport_ID_textBox = new System.Windows.Forms.TextBox();
             this.Search_Airport_Location_textBox = new System.Windows.Forms.TextBox();
             this.Search_Airport_Name_textBox = new System.Windows.Forms.TextBox();
             this.pos_tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Airport_dataGridView)).BeginInit();
-            this.tableLayoutPanel.SuspendLayout();
+            this.search_layout.SuspendLayout();
             this.Search_tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             this.pos_tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.pos_tableLayoutPanel.Controls.Add(this.kryptonButton1, 0, 2);
             this.pos_tableLayoutPanel.Controls.Add(this.Airport_dataGridView, 0, 1);
-            this.pos_tableLayoutPanel.Controls.Add(this.tableLayoutPanel, 0, 0);
+            this.pos_tableLayoutPanel.Controls.Add(this.search_layout, 0, 0);
             this.pos_tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.pos_tableLayoutPanel.Name = "pos_tableLayoutPanel";
             this.pos_tableLayoutPanel.RowCount = 4;
@@ -85,22 +85,22 @@
             this.Airport_dataGridView.Size = new System.Drawing.Size(1348, 705);
             this.Airport_dataGridView.TabIndex = 0;
             // 
-            // tableLayoutPanel
+            // search_layout
             // 
-            this.tableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.search_layout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel.ColumnCount = 1;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel.Controls.Add(this.Search_tableLayoutPanel, 0, 0);
-            this.tableLayoutPanel.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 1;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1348, 41);
-            this.tableLayoutPanel.TabIndex = 5;
+            this.search_layout.ColumnCount = 1;
+            this.search_layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.search_layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.search_layout.Controls.Add(this.Search_tableLayoutPanel, 0, 0);
+            this.search_layout.Location = new System.Drawing.Point(3, 3);
+            this.search_layout.Name = "search_layout";
+            this.search_layout.RowCount = 1;
+            this.search_layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.search_layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.search_layout.Size = new System.Drawing.Size(1348, 41);
+            this.search_layout.TabIndex = 5;
             // 
             // Search_tableLayoutPanel
             // 
@@ -173,8 +173,8 @@
             this.Load += new System.EventHandler(this.AirportManagementForm_Load);
             this.pos_tableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Airport_dataGridView)).EndInit();
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.tableLayoutPanel.PerformLayout();
+            this.search_layout.ResumeLayout(false);
+            this.search_layout.PerformLayout();
             this.Search_tableLayoutPanel.ResumeLayout(false);
             this.Search_tableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -186,7 +186,7 @@
         private TableLayoutPanel pos_tableLayoutPanel;
         private Krypton.Toolkit.KryptonDataGridView Airport_dataGridView;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private TableLayoutPanel tableLayoutPanel;
+        private TableLayoutPanel search_layout;
         private TableLayoutPanel Search_tableLayoutPanel;
         private TextBox Search_Airport_ID_textBox;
         private TextBox Search_Airport_Location_textBox;
