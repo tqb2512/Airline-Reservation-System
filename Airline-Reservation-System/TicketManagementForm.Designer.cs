@@ -64,11 +64,11 @@
             Search_Ticket_Information_tableLayoutPanel = new TableLayoutPanel();
             Search_Departure_textBox = new TextBox();
             Search_PasengerName_textBox = new TextBox();
-            Search_TicketPrice_textBox = new TextBox();
-            Search_SeatName_textBox = new TextBox();
             Search_ArrivalAP_textBox = new TextBox();
             Search_DepartureAP_textBox = new TextBox();
             Search_Ticket_ID_textBox = new TextBox();
+            Search_SeatName_textBox = new TextBox();
+            Search_TicketPrice_textBox = new TextBox();
             Search_tableLayoutPanel = new TableLayoutPanel();
             Search_Airport_Location_textBox = new TextBox();
             Search_Airport_Name_textBox = new TextBox();
@@ -129,7 +129,7 @@
             groupBox1.Size = new Size(638, 312);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Thông tin vé";
+            groupBox1.Text = "Ticket Details";
             // 
             // tableLayoutPanel4
             // 
@@ -439,6 +439,8 @@
             Ticket_dataGridView.ScrollBars = ScrollBars.Vertical;
             Ticket_dataGridView.Size = new Size(1930, 910);
             Ticket_dataGridView.TabIndex = 0;
+            Ticket_dataGridView.CellClick += Ticket_dataGridView_CellClick_1;
+            Ticket_dataGridView.SizeChanged += Ticket_dataGridView_SizeChanged_1;
             // 
             // tableLayoutPanel1
             // 
@@ -518,24 +520,6 @@
             Search_PasengerName_textBox.Size = new Size(269, 39);
             Search_PasengerName_textBox.TabIndex = 6;
             // 
-            // Search_TicketPrice_textBox
-            // 
-            Search_TicketPrice_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_TicketPrice_textBox.Location = new Point(1653, 4);
-            Search_TicketPrice_textBox.Margin = new Padding(3, 4, 3, 4);
-            Search_TicketPrice_textBox.Name = "Search_TicketPrice_textBox";
-            Search_TicketPrice_textBox.Size = new Size(274, 39);
-            Search_TicketPrice_textBox.TabIndex = 5;
-            // 
-            // Search_SeatName_textBox
-            // 
-            Search_SeatName_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_SeatName_textBox.Location = new Point(1378, 4);
-            Search_SeatName_textBox.Margin = new Padding(3, 4, 3, 4);
-            Search_SeatName_textBox.Name = "Search_SeatName_textBox";
-            Search_SeatName_textBox.Size = new Size(269, 39);
-            Search_SeatName_textBox.TabIndex = 4;
-            // 
             // Search_ArrivalAP_textBox
             // 
             Search_ArrivalAP_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -562,6 +546,24 @@
             Search_Ticket_ID_textBox.Name = "Search_Ticket_ID_textBox";
             Search_Ticket_ID_textBox.Size = new Size(269, 39);
             Search_Ticket_ID_textBox.TabIndex = 0;
+            // 
+            // Search_SeatName_textBox
+            // 
+            Search_SeatName_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Search_SeatName_textBox.Location = new Point(1378, 4);
+            Search_SeatName_textBox.Margin = new Padding(3, 4, 3, 4);
+            Search_SeatName_textBox.Name = "Search_SeatName_textBox";
+            Search_SeatName_textBox.Size = new Size(269, 39);
+            Search_SeatName_textBox.TabIndex = 4;
+            // 
+            // Search_TicketPrice_textBox
+            // 
+            Search_TicketPrice_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Search_TicketPrice_textBox.Location = new Point(1653, 4);
+            Search_TicketPrice_textBox.Margin = new Padding(3, 4, 3, 4);
+            Search_TicketPrice_textBox.Name = "Search_TicketPrice_textBox";
+            Search_TicketPrice_textBox.Size = new Size(274, 39);
+            Search_TicketPrice_textBox.TabIndex = 5;
             // 
             // Search_tableLayoutPanel
             // 

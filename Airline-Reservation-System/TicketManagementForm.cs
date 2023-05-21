@@ -18,14 +18,14 @@ namespace Airline_Reservation_System
             InitializeComponent();
         }
 
-        float idTicketColumn = 0.125f;
-        float namePassengerColumn = 0.125f;
-        float departureColumn = 0.125f;
-        float departureAirportColumn = 0.125f;
-        float arrivalAirportColumn = 0.125f;
-        float emptyAmountColumn = 0.125f;
-        float seatNameColumn = 0.125f;
-        float priceColumn = 0.125f;
+        float idTicketColumn = 0.142857f;
+        float namePassengerColumn = 0.142857f;
+        float departureColumn = 0.142857f;
+        float departureAirportColumn = 0.142857f;
+        float arrivalAirportColumn = 0.142857f;
+        float emptyAmountColumn = 0.142857f;
+        float seatNameColumn = 0.142857f;
+        float priceColumn = 0.143f;
 
 
         public void dataLoad()
@@ -41,13 +41,13 @@ namespace Airline_Reservation_System
 
             DataTable table = sqlFunction.getSqlDataTable(query);
             Ticket_dataGridView.DataSource = table;
-            Ticket_dataGridView.Columns["TICKET_ID"].HeaderText = "Mã vé";
-            Ticket_dataGridView.Columns["PASSENGER_NAME"].HeaderText = "Tên hành khách";
-            Ticket_dataGridView.Columns["DEPARTURE"].HeaderText = "Ngày khởi hành";
-            Ticket_dataGridView.Columns["DepartureAirport"].HeaderText = "Điểm khởi hành";
-            Ticket_dataGridView.Columns["ArrivalAirport"].HeaderText = "Điểm đến";
-            Ticket_dataGridView.Columns["SEAT_NAME"].HeaderText = "Tên ghế";
-            Ticket_dataGridView.Columns["PRICE"].HeaderText = "Giá vé";
+            Ticket_dataGridView.Columns["TICKET_ID"].HeaderText = "Ticket ID";
+            Ticket_dataGridView.Columns["PASSENGER_NAME"].HeaderText = "Pasenger Name";
+            Ticket_dataGridView.Columns["DEPARTURE"].HeaderText = "Departure";
+            Ticket_dataGridView.Columns["DepartureAirport"].HeaderText = "Departure_Airport";
+            Ticket_dataGridView.Columns["ArrivalAirport"].HeaderText = "Arrival_Airport";
+            Ticket_dataGridView.Columns["SEAT_NAME"].HeaderText = "Seatname";
+            Ticket_dataGridView.Columns["PRICE"].HeaderText = "Ticket Price";
 
             Ticket_dataGridView.Columns["PASSENGER_ID_NUMBER"].Visible = false;
             Ticket_dataGridView.Columns["PASSENGER_PHONE"].Visible = false;
@@ -198,6 +198,76 @@ namespace Airline_Reservation_System
             Ticket_dataGridView.Columns["ArrivalAirport"].Width = (int)(Ticket_dataGridView.Width * arrivalAirportColumn);
             Ticket_dataGridView.Columns["SEAT_NAME"].Width = (int)(Ticket_dataGridView.Width * seatNameColumn);
             Ticket_dataGridView.Columns["PRICE"].Width = (int)(Ticket_dataGridView.Width * priceColumn);
+        }
+
+        private void Ticket_dataGridView_SizeChanged_1(object sender, EventArgs e)
+        {
+            Ticket_dataGridView.Columns["TICKET_ID"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
+            Ticket_dataGridView.Columns["PASSENGER_NAME"].Width = (int)(Ticket_dataGridView.Width * namePassengerColumn);
+            Ticket_dataGridView.Columns["DEPARTURE"].Width = (int)(Ticket_dataGridView.Width * departureColumn);
+            Ticket_dataGridView.Columns["DepartureAirport"].Width = (int)(Ticket_dataGridView.Width * departureAirportColumn);
+            Ticket_dataGridView.Columns["ArrivalAirport"].Width = (int)(Ticket_dataGridView.Width * arrivalAirportColumn);
+            Ticket_dataGridView.Columns["SEAT_NAME"].Width = (int)(Ticket_dataGridView.Width * seatNameColumn);
+            Ticket_dataGridView.Columns["PRICE"].Width = (int)(Ticket_dataGridView.Width * priceColumn);
+        }
+
+        private void Ticket_dataGridView_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Ticket_dataGridView.Columns["TICKET_ID"].HeaderText = "Ticket ID";
+                Ticket_dataGridView.Columns["PASSENGER_NAME"].HeaderText = "Passenger' Name";
+                Ticket_dataGridView.Columns["DEPARTURE"].HeaderText = "Departure";
+                Ticket_dataGridView.Columns["DepartureAirport"].HeaderText = "Departure Airport";
+                Ticket_dataGridView.Columns["ArrivalAirport"].HeaderText = "Arrival Airport";
+                Ticket_dataGridView.Columns["SEAT_NAME"].HeaderText = "Seat Name";
+                Ticket_dataGridView.Columns["PRICE"].HeaderText = "Ticket Price";
+
+                Ticket_dataGridView.Columns["PASSENGER_ID_NUMBER"].Visible = false;
+                Ticket_dataGridView.Columns["PASSENGER_PHONE"].Visible = false;
+                Ticket_dataGridView.Columns["FLIGHT_ID"].Visible = false;
+                Ticket_dataGridView.Columns["passenger_id"].Visible = false;
+
+                Ticket_ID_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                Passenger_Name_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Flight_Departure_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                Flight_DepartureAP_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                Flight_ArrivalAP_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[7].Value.ToString();
+                Seat_Name_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                Ticket_Price_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                Passenger_ID_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                Passenger_Phone_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[9].Value.ToString();
+                Passenger_IDnumber_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[8].Value.ToString();
+                Flight_ID_textBox.Text = Ticket_dataGridView.Rows[e.RowIndex].Cells[10].Value.ToString();
+
+                Ticket_ID_textBox.ReadOnly = true;
+                Passenger_Name_textBox.ReadOnly = true;
+                Flight_Departure_textBox.ReadOnly = true;
+                Flight_DepartureAP_textBox.ReadOnly = true;
+                Flight_ArrivalAP_textBox.ReadOnly = true;
+
+                Seat_Name_textBox.ReadOnly = true;
+                Ticket_Price_textBox.ReadOnly = true;
+                Passenger_Name_textBox.ReadOnly = true;
+                Passenger_Phone_textBox.ReadOnly = true;
+                Passenger_IDnumber_textBox.ReadOnly = true;
+                Flight_ID_textBox.ReadOnly = true;
+                Passenger_ID_textBox.ReadOnly = true;
+
+                Ticket_ID_textBox.Enabled = false;
+                Passenger_Name_textBox.Enabled = false;
+                Flight_Departure_textBox.Enabled = false;
+                Flight_DepartureAP_textBox.Enabled = false;
+                Flight_ArrivalAP_textBox.Enabled = false;
+
+                Seat_Name_textBox.Enabled = false;
+                Ticket_Price_textBox.Enabled = false;
+                Passenger_Name_textBox.Enabled = false;
+                Passenger_Phone_textBox.Enabled = false;
+                Passenger_IDnumber_textBox.Enabled = false;
+                Flight_ID_textBox.Enabled = false;
+                Passenger_ID_textBox.Enabled = false;
+            }
         }
     }
 }

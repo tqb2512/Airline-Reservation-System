@@ -5,9 +5,9 @@
     },
     "mssql1": {
       "secretStore": "LocalSecretsFile",
+      "resourceId": null,
       "type": "mssql.local",
-      "connectionId": "Server=DESKTOP-FF84BKS;Database=Airline_Reservation_System;Trusted_Connection=True;MultipleActiveResultSets=true",
-      "dynamicId": null
+      "connectionId": "Server=DESKTOP-FF84BKS;Database=Airline_Reservation_System;Trusted_Connection=True;MultipleActiveResultSets=true"
     }
   }
 }
