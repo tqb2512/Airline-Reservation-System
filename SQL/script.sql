@@ -143,5 +143,3 @@ select c.flight_id, departure, start, arrive, flight_time, class1_empty, class1_
 select airport_name, airport_location from (select stopover from flight inner join flight_detail on flight.flight_id = flight_detail.flight_id) as a inner join airport on a.stopover = airport_id
 
 select * from (select price as class1price from flight inner join ticket_price on flight.route_id = ticket_price.route_id where flight.flight_id = 1 and seat_id = 1) as a inner join (select price as class2price from flight inner join ticket_price on flight.route_id = ticket_price.route_id where flight.flight_id = 1 and seat_id = 2) as b on 1 = 1
-
-select * from ticket
