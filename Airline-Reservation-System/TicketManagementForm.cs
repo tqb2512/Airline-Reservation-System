@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace Airline_Reservation_System
@@ -38,51 +39,46 @@ namespace Airline_Reservation_System
                 "JOIN SEAT_DETAIL ON SEAT_DETAIL.SEAT_ID = SEAT_INFO.SEAT_ID " +
                 "JOIN airport a1 ON route.airport_start_id = a1.airport_id " +
                 "JOIN airport a2 ON route.airport_arrive_id = a2.airport_id ";
-            try
-            {
-                DataTable table = sqlFunction.getSqlDataTable(query);
-                Ticket_dataGridView.DataSource = table;
-                Ticket_dataGridView.Columns["TICKET_ID"].HeaderText = "Mã vé";
-                Ticket_dataGridView.Columns["PASSENGER_NAME"].HeaderText = "Tên hành khách";
-                Ticket_dataGridView.Columns["DEPARTURE"].HeaderText = "Ngày khởi hành";
-                Ticket_dataGridView.Columns["DepartureAirport"].HeaderText = "Điểm khởi hành";
-                Ticket_dataGridView.Columns["ArrivalAirport"].HeaderText = "Điểm đến";
-                Ticket_dataGridView.Columns["EMPTY_AMOUNT"].HeaderText = "Số lượng ghế trống";
-                Ticket_dataGridView.Columns["SEAT_NAME"].HeaderText = "Tên ghế";
-                Ticket_dataGridView.Columns["PRICE"].HeaderText = "Giá vé";
 
-                Ticket_dataGridView.Columns["PASSENGER_ID_NUMBER"].Visible = false;
-                Ticket_dataGridView.Columns["PASSENGER_PHONE"].Visible = false;
-                Ticket_dataGridView.Columns["FLIGHT_ID"].Visible = false;
-                Ticket_dataGridView.Columns["passenger_id"].Visible = false;
+            DataTable table = sqlFunction.getSqlDataTable(query);
+            Ticket_dataGridView.DataSource = table;
+            Ticket_dataGridView.Columns["TICKET_ID"].HeaderText = "Mã vé";
+            Ticket_dataGridView.Columns["PASSENGER_NAME"].HeaderText = "Tên hành khách";
+            Ticket_dataGridView.Columns["DEPARTURE"].HeaderText = "Ngày khởi hành";
+            Ticket_dataGridView.Columns["DepartureAirport"].HeaderText = "Điểm khởi hành";
+            Ticket_dataGridView.Columns["ArrivalAirport"].HeaderText = "Điểm đến";
+            Ticket_dataGridView.Columns["EMPTY_AMOUNT"].HeaderText = "Số lượng ghế trống";
+            Ticket_dataGridView.Columns["SEAT_NAME"].HeaderText = "Tên ghế";
+            Ticket_dataGridView.Columns["PRICE"].HeaderText = "Giá vé";
+
+            Ticket_dataGridView.Columns["PASSENGER_ID_NUMBER"].Visible = false;
+            Ticket_dataGridView.Columns["PASSENGER_PHONE"].Visible = false;
+            Ticket_dataGridView.Columns["FLIGHT_ID"].Visible = false;
+            Ticket_dataGridView.Columns["passenger_id"].Visible = false;
 
 
-                Ticket_dataGridView.Columns["TICKET_ID"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
-                Ticket_dataGridView.Columns["PASSENGER_NAME"].Width = (int)(Ticket_dataGridView.Width * namePassengerColumn);
-                Ticket_dataGridView.Columns["DEPARTURE"].Width = (int)(Ticket_dataGridView.Width * departureColumn);
-                Ticket_dataGridView.Columns["DepartureAirport"].Width = (int)(Ticket_dataGridView.Width * departureAirportColumn);
-                Ticket_dataGridView.Columns["ArrivalAirport"].Width = (int)(Ticket_dataGridView.Width * arrivalAirportColumn);
-                Ticket_dataGridView.Columns["EMPTY_AMOUNT"].Width = (int)(Ticket_dataGridView.Width * emptyAmountColumn);
-                Ticket_dataGridView.Columns["SEAT_NAME"].Width = (int)(Ticket_dataGridView.Width * seatNameColumn);
-                Ticket_dataGridView.Columns["PRICE"].Width = (int)(Ticket_dataGridView.Width * priceColumn);
+            Ticket_dataGridView.Columns["TICKET_ID"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
+            Ticket_dataGridView.Columns["PASSENGER_NAME"].Width = (int)(Ticket_dataGridView.Width * namePassengerColumn);
+            Ticket_dataGridView.Columns["DEPARTURE"].Width = (int)(Ticket_dataGridView.Width * departureColumn);
+            Ticket_dataGridView.Columns["DepartureAirport"].Width = (int)(Ticket_dataGridView.Width * departureAirportColumn);
+            Ticket_dataGridView.Columns["ArrivalAirport"].Width = (int)(Ticket_dataGridView.Width * arrivalAirportColumn);
+            Ticket_dataGridView.Columns["EMPTY_AMOUNT"].Width = (int)(Ticket_dataGridView.Width * emptyAmountColumn);
+            Ticket_dataGridView.Columns["SEAT_NAME"].Width = (int)(Ticket_dataGridView.Width * seatNameColumn);
+            Ticket_dataGridView.Columns["PRICE"].Width = (int)(Ticket_dataGridView.Width * priceColumn);
 
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[0].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * idTicketColumn);
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[1].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * namePassengerColumn);
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[2].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * departureColumn);
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[3].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * departureAirportColumn);
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[4].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * arrivalAirportColumn);
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[5].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * emptyAmountColumn);
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[6].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * seatNameColumn);
-                Search_Ticket_Information_tableLayoutPanel.ColumnStyles[7].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * priceColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[0].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * idTicketColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[1].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * namePassengerColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[2].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * departureColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[3].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * departureAirportColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[4].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * arrivalAirportColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[5].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * emptyAmountColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[6].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * seatNameColumn);
+            Search_Ticket_Information_tableLayoutPanel.ColumnStyles[7].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * priceColumn);
 
-                Ticket_dataGridView.RowHeadersVisible = false;
-                Ticket_dataGridView.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
-                //Ticket_dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Ticket_dataGridView.RowHeadersVisible = false;
+            //Ticket_dataGridView.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
+            //Ticket_dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void TicketManagementForm_Load(object sender, EventArgs e)
@@ -90,41 +86,6 @@ namespace Airline_Reservation_System
             dataLoad();
             //this.SizeChanged += new System.EventHandler(this.TicketManagementForm_SizeChanged);
         }
-
-        //private void ShowDetailTicketInformation(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.RowIndex >= 0)
-        //    {
-        //        Ticket_ID_textBox.Text = kryptonDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-
-        //        //Ticket_ID_textBox.Enabled = false;
-        //        //Flight_ID_textBox.Enabled = false;
-        //        //Passenger_ID_textBox.Enabled = false;
-        //        //Passenger_Name_textBox.Enabled = false;
-        //        //Passenger_Phone_textBox.Enabled = false;
-        //        //Passenger_IDnumber_textBox.Enabled = false;
-        //        //Flight_Route_textBox.Enabled = false;
-        //        //Flight_Departure_textBox.Enabled = false;
-        //        //Flight_class1_textBox.Enabled = false;
-        //        //Flight_class2_textBox.Enabled = false;
-        //        //Seat_Name_textBox.Enabled = false;
-        //        //Ticket_Price_textBox.Enabled = false;
-
-        //        //Ticket_ID_textBox.ReadOnly = true;
-        //        //Flight_ID_textBox.ReadOnly = true;
-        //        //Passenger_ID_textBox.ReadOnly = true;
-        //        //Passenger_Name_textBox.ReadOnly = true;
-        //        //Passenger_Phone_textBox.ReadOnly = true;
-        //        //Passenger_IDnumber_textBox.ReadOnly = true;
-        //        //Flight_Route_textBox.ReadOnly = true;
-        //        //Flight_Departure_textBox.ReadOnly = true;
-        //        //Flight_class1_textBox.ReadOnly = true;
-        //        //Flight_class2_textBox.ReadOnly = true;
-        //        //Seat_Name_textBox.ReadOnly = true;
-        //        //Ticket_Price_textBox.ReadOnly = true;
-        //    }
-        //}
 
         private void SearchTextBox(object sender, EventArgs e)
         {
@@ -225,25 +186,28 @@ namespace Airline_Reservation_System
             }
         }
 
-        //private void TicketManagementForm_SizeChanged(object sender, EventArgs e)
-        //{
-        //    Ticket_dataGridView.Columns["TICKET_ID"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
-        //    Ticket_dataGridView.Columns["PASSENGER_NAME"].Width = (int)(Ticket_dataGridView.Width * namePassengerColumn);
-        //    Ticket_dataGridView.Columns["DEPARTURE"].Width = (int)(Ticket_dataGridView.Width * departureColumn);
-        //    Ticket_dataGridView.Columns["DepartureAirport"].Width = (int)(Ticket_dataGridView.Width * departureAirportColumn);
-        //    Ticket_dataGridView.Columns["ArrivalAirport"].Width = (int)(Ticket_dataGridView.Width * arrivalAirportColumn);
-        //    Ticket_dataGridView.Columns["EMPTY_AMOUNT"].Width = (int)(Ticket_dataGridView.Width * emptyAmountColumn);
-        //    Ticket_dataGridView.Columns["SEAT_NAME"].Width = (int)(Ticket_dataGridView.Width * seatNameColumn);
-        //    Ticket_dataGridView.Columns["PRICE"].Width = (int)(Ticket_dataGridView.Width * priceColumn);
+        private void Ticket_dataGridView_SizeChanged(object sender, EventArgs e)
+        {
+            Ticket_dataGridView.Columns["TICKET_ID"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
+            Ticket_dataGridView.Columns["PASSENGER_NAME"].Width = (int)(Ticket_dataGridView.Width * namePassengerColumn);
+            Ticket_dataGridView.Columns["DEPARTURE"].Width = (int)(Ticket_dataGridView.Width * departureColumn);
+            Ticket_dataGridView.Columns["DepartureAirport"].Width = (int)(Ticket_dataGridView.Width * departureAirportColumn);
+            Ticket_dataGridView.Columns["ArrivalAirport"].Width = (int)(Ticket_dataGridView.Width * arrivalAirportColumn);
+            Ticket_dataGridView.Columns["EMPTY_AMOUNT"].Width = (int)(Ticket_dataGridView.Width * emptyAmountColumn);
+            Ticket_dataGridView.Columns["SEAT_NAME"].Width = (int)(Ticket_dataGridView.Width * seatNameColumn);
+            Ticket_dataGridView.Columns["PRICE"].Width = (int)(Ticket_dataGridView.Width * priceColumn);
+        }
 
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[0].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * idTicketColumn);
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[1].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * namePassengerColumn);
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[2].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * departureColumn);
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[3].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * departureAirportColumn);
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[4].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * arrivalAirportColumn);
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[5].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * emptyAmountColumn);
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[6].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * seatNameColumn);
-        //    Search_Ticket_Information_tableLayoutPanel.ColumnStyles[7].Width = (int)(Search_Ticket_Information_tableLayoutPanel.Width * priceColumn);
-        //}
+        private void TicketManagementForm_SizeChanged(object sender, EventArgs e)
+        {
+            //Ticket_dataGridView.Columns["TICKET_ID"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
+            //Ticket_dataGridView.Columns["PASSENGER_NAME"].Width = (int)(Ticket_dataGridView.Width * namePassengerColumn);
+            //Ticket_dataGridView.Columns["DEPARTURE"].Width = (int)(Ticket_dataGridView.Width * departureColumn);
+            //Ticket_dataGridView.Columns["DepartureAirport"].Width = (int)(Ticket_dataGridView.Width * departureAirportColumn);
+            //Ticket_dataGridView.Columns["ArrivalAirport"].Width = (int)(Ticket_dataGridView.Width * arrivalAirportColumn);
+            //Ticket_dataGridView.Columns["EMPTY_AMOUNT"].Width = (int)(Ticket_dataGridView.Width * emptyAmountColumn);
+            //Ticket_dataGridView.Columns["SEAT_NAME"].Width = (int)(Ticket_dataGridView.Width * seatNameColumn);
+            //Ticket_dataGridView.Columns["PRICE"].Width = (int)(Ticket_dataGridView.Width * priceColumn);
+        }
     }
 }

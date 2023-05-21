@@ -91,12 +91,16 @@
             // 
             // tableLayoutPanel2
             // 
+            tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel2.ColumnCount = 3;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(200, 100);
             tableLayoutPanel2.TabIndex = 0;
             // 
@@ -120,8 +124,9 @@
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.AutoSize = true;
             groupBox1.Controls.Add(tableLayoutPanel4);
+            groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(638, 312);
@@ -171,28 +176,31 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(69, 32);
+            label1.Size = new Size(215, 66);
             label1.TabIndex = 0;
             label1.Text = "ID vé";
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Location = new Point(3, 132);
             label3.Name = "label3";
-            label3.Size = new Size(80, 32);
+            label3.Size = new Size(215, 66);
             label3.TabIndex = 2;
             label3.Text = "Giá vé";
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Location = new Point(3, 66);
             label2.Name = "label2";
-            label2.Size = new Size(112, 32);
+            label2.Size = new Size(215, 66);
             label2.TabIndex = 1;
             label2.Text = "Ghế ngồi";
             // 
@@ -206,6 +214,7 @@
             // 
             // Empty_Seat_textBox
             // 
+            Empty_Seat_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Empty_Seat_textBox.Location = new Point(224, 201);
             Empty_Seat_textBox.Name = "Empty_Seat_textBox";
             Empty_Seat_textBox.Size = new Size(406, 39);
@@ -213,17 +222,19 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Location = new Point(3, 198);
             label6.Name = "label6";
-            label6.Size = new Size(154, 32);
+            label6.Size = new Size(215, 66);
             label6.TabIndex = 7;
             label6.Text = "Số ghế trống";
             // 
             // groupBox3
             // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.AutoSize = true;
             groupBox3.Controls.Add(tableLayoutPanel6);
+            groupBox3.Dock = DockStyle.Fill;
             groupBox3.Location = new Point(1293, 3);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(640, 312);
@@ -232,6 +243,7 @@
             // 
             // tableLayoutPanel6
             // 
+            tableLayoutPanel6.AutoSize = true;
             tableLayoutPanel6.ColumnCount = 2;
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65F));
@@ -251,80 +263,86 @@
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel6.Size = new Size(633, 334);
+            tableLayoutPanel6.Size = new Size(635, 334);
             tableLayoutPanel6.TabIndex = 3;
             // 
             // Flight_DepartureAP_textBox
             // 
             Flight_DepartureAP_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Flight_DepartureAP_textBox.Location = new Point(224, 135);
+            Flight_DepartureAP_textBox.Location = new Point(225, 135);
             Flight_DepartureAP_textBox.Name = "Flight_DepartureAP_textBox";
-            Flight_DepartureAP_textBox.Size = new Size(406, 39);
+            Flight_DepartureAP_textBox.Size = new Size(407, 39);
             Flight_DepartureAP_textBox.TabIndex = 5;
             // 
             // Flight_Departure_textBox
             // 
             Flight_Departure_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Flight_Departure_textBox.Location = new Point(224, 69);
+            Flight_Departure_textBox.Location = new Point(225, 69);
             Flight_Departure_textBox.Name = "Flight_Departure_textBox";
-            Flight_Departure_textBox.Size = new Size(406, 39);
+            Flight_Departure_textBox.Size = new Size(407, 39);
             Flight_Departure_textBox.TabIndex = 4;
             // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Location = new Point(3, 0);
             label8.Name = "label8";
-            label8.Size = new Size(167, 32);
+            label8.Size = new Size(216, 66);
             label8.TabIndex = 0;
             label8.Text = "ID chuyến bay";
             // 
             // Flight_ID_textBox
             // 
             Flight_ID_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Flight_ID_textBox.Location = new Point(224, 3);
+            Flight_ID_textBox.Location = new Point(225, 3);
             Flight_ID_textBox.Name = "Flight_ID_textBox";
-            Flight_ID_textBox.Size = new Size(406, 39);
+            Flight_ID_textBox.Size = new Size(407, 39);
             Flight_ID_textBox.TabIndex = 3;
             // 
             // Flight_ArrivalAP_textBox
             // 
-            Flight_ArrivalAP_textBox.Location = new Point(224, 201);
+            Flight_ArrivalAP_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Flight_ArrivalAP_textBox.Location = new Point(225, 201);
             Flight_ArrivalAP_textBox.Name = "Flight_ArrivalAP_textBox";
-            Flight_ArrivalAP_textBox.Size = new Size(406, 39);
+            Flight_ArrivalAP_textBox.Size = new Size(407, 39);
             Flight_ArrivalAP_textBox.TabIndex = 7;
             // 
             // label11
             // 
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label11.AutoSize = true;
             label11.Location = new Point(3, 198);
             label11.Name = "label11";
-            label11.Size = new Size(119, 32);
+            label11.Size = new Size(216, 66);
             label11.TabIndex = 6;
             label11.Text = "Điểm đến";
             // 
             // label10
             // 
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Location = new Point(3, 132);
             label10.Name = "label10";
-            label10.Size = new Size(185, 32);
+            label10.Size = new Size(216, 66);
             label10.TabIndex = 1;
             label10.Text = "Điểm khởi hành";
             // 
             // label9
             // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.Location = new Point(3, 66);
             label9.Name = "label9";
-            label9.Size = new Size(164, 32);
+            label9.Size = new Size(216, 66);
             label9.TabIndex = 2;
             label9.Text = "Giờ khởi hành";
             // 
             // groupBox2
             // 
-            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox2.AutoSize = true;
             groupBox2.Controls.Add(tableLayoutPanel5);
+            groupBox2.Dock = DockStyle.Fill;
             groupBox2.Location = new Point(647, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(640, 312);
@@ -373,19 +391,21 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Location = new Point(3, 0);
             label4.Name = "label4";
-            label4.Size = new Size(168, 32);
+            label4.Size = new Size(215, 66);
             label4.TabIndex = 0;
             label4.Text = "ID hành khách";
             // 
             // Passenger_Name_label
             // 
+            Passenger_Name_label.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Passenger_Name_label.AutoSize = true;
             Passenger_Name_label.Location = new Point(3, 66);
             Passenger_Name_label.Name = "Passenger_Name_label";
-            Passenger_Name_label.Size = new Size(87, 32);
+            Passenger_Name_label.Size = new Size(215, 66);
             Passenger_Name_label.TabIndex = 1;
             Passenger_Name_label.Text = "Họ tên";
             // 
@@ -399,6 +419,7 @@
             // 
             // Passenger_Phone_textBox
             // 
+            Passenger_Phone_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Passenger_Phone_textBox.Location = new Point(224, 201);
             Passenger_Phone_textBox.Name = "Passenger_Phone_textBox";
             Passenger_Phone_textBox.Size = new Size(406, 39);
@@ -406,19 +427,21 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Location = new Point(3, 198);
             label7.Name = "label7";
-            label7.Size = new Size(156, 32);
+            label7.Size = new Size(215, 66);
             label7.TabIndex = 6;
             label7.Text = "Số điện thoại";
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Location = new Point(3, 132);
             label5.Name = "label5";
-            label5.Size = new Size(74, 32);
+            label5.Size = new Size(215, 66);
             label5.TabIndex = 2;
             label5.Text = "CCCD";
             // 
@@ -428,9 +451,8 @@
             Ticket_dataGridView.AllowUserToDeleteRows = false;
             Ticket_dataGridView.AllowUserToResizeColumns = false;
             Ticket_dataGridView.AllowUserToResizeRows = false;
-            Ticket_dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Ticket_dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Ticket_dataGridView.ColumnHeadersHeight = 70;
-            Ticket_dataGridView.Dock = DockStyle.Fill;
             Ticket_dataGridView.Location = new Point(3, 53);
             Ticket_dataGridView.Name = "Ticket_dataGridView";
             Ticket_dataGridView.ReadOnly = true;
@@ -441,6 +463,7 @@
             Ticket_dataGridView.Size = new Size(1930, 910);
             Ticket_dataGridView.TabIndex = 0;
             Ticket_dataGridView.CellClick += Ticket_dataGridView_CellClick;
+            Ticket_dataGridView.SizeChanged += Ticket_dataGridView_SizeChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -474,7 +497,7 @@
             // 
             // Search_Ticket_Information_tableLayoutPanel
             // 
-            Search_Ticket_Information_tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Search_Ticket_Information_tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Search_Ticket_Information_tableLayoutPanel.ColumnCount = 8;
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
@@ -488,19 +511,20 @@
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_Departure_textBox, 0, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_PasengerName_textBox, 0, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_TicketPrice_textBox, 5, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_SeatName_textBox, 4, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_EmptySeat_textBox, 3, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_ArrivalAP_textBox, 2, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_DepartureAP_textBox, 1, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_Departure_textBox, 2, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_PasengerName_textBox, 1, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_TicketPrice_textBox, 7, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_SeatName_textBox, 6, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_EmptySeat_textBox, 5, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_ArrivalAP_textBox, 4, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_DepartureAP_textBox, 3, 0);
             Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_Ticket_ID_textBox, 0, 0);
             Search_Ticket_Information_tableLayoutPanel.Location = new Point(3, 3);
             Search_Ticket_Information_tableLayoutPanel.Name = "Search_Ticket_Information_tableLayoutPanel";
             Search_Ticket_Information_tableLayoutPanel.RowCount = 1;
             Search_Ticket_Information_tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Search_Ticket_Information_tableLayoutPanel.Size = new Size(1930, 42);
+            Search_Ticket_Information_tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Search_Ticket_Information_tableLayoutPanel.Size = new Size(1930, 44);
             Search_Ticket_Information_tableLayoutPanel.TabIndex = 2;
             // 
             // Search_Departure_textBox
@@ -624,11 +648,14 @@
             Name = "TicketManagementForm";
             Text = "TicketManagementForm";
             Load += TicketManagementForm_Load;
+            SizeChanged += TicketManagementForm_SizeChanged;
             Detail_tableLayoutPanel.ResumeLayout(false);
+            Detail_tableLayoutPanel.PerformLayout();
             groupBox1.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
             groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel6.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -680,8 +707,6 @@
         private TextBox Search_Airport_Location_textBox;
         private TextBox Search_Airport_Name_textBox;
         private TextBox Search_Price_textBox;
-        private TextBox Search_Class2_textBox;
-        private TextBox Search_Class1_textBox;
         private TextBox Search_Route_ID_textBox;
         private TextBox Empty_Seat_textBox;
         private Label label6;
