@@ -56,5 +56,11 @@ namespace Airline_Reservation_System
         {
             addToTabControl(new RouteManagementForm(), "Route");
         }
+
+        private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookingForm bookingForm = new BookingForm();
+            bookingForm.ShowDialog();
+        }
     }
 }

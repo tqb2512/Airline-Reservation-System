@@ -118,3 +118,35 @@ Insert into flight values (3, '2019-12-01 08:00:00', 100, 100)
 Insert into flight_detail values (1, null, 'Direct flight')
 Insert into flight_detail values (2, null, 'Direct flight')
 Insert into flight_detail values (3, null, 'Direct flight')
+
+Insert into passenger values ('Nguyen Van A', '0123456789', '123456789')
+Insert into passenger values ('Nguyen Van B', '0123456789', '123456789')
+Insert into passenger values ('Nguyen Van C', '0123456789', '123456789')
+
+Insert into ticket_price values (1, 1, 1000000)
+Insert into ticket_price values (1, 2, 2000000)
+
+Insert into seat_info values ('A1')
+Insert into seat_info values ('A2')
+
+Insert into seat_detail values (1, 1, 100, 0)
+Insert into seat_detail values (1, 2, 100, 0)
+Insert into seat_detail values (2, 1, 100, 0)
+Insert into seat_detail values (2, 2, 100, 0)
+
+insert into reserve_ticket values (1, 1, 1, '2019-12-01 08:00:00', 0)
+insert into reserve_ticket values (1, 1, 2, '2019-12-01 08:00:00', 0)
+
+insert into ticket values (1, 1, 1)
+insert into ticket values (1, 1, 2)
+
+insert into flight_detail values (1, 3, 'Direct flight')
+insert into flight_detail values (2, 3, 'Direct flight')
+
+select c.flight_id, departure, start, arrive, flight_time, class1_empty, class1_reserved, empty_amount as class2_empty, reserved_amount as class2_reserved from (select b.flight_id, route_id, departure, start, arrive, flight_time, empty_amount as class1_empty, reserved_amount as class1_reserved from (select flight_id, route_id, departure, airport_location as start, airport_location as arrive, flight_time from (select flight_id, flight.route_id, departure, airport_location as start, airport_arrive_id, flight_time from flight inner join route on flight.route_id = route.route_id inner join airport on airport_start_id = airport_id) as a inner join airport on airport_arrive_id = airport_id) as b inner join seat_detail on b.flight_id = seat_detail.flight_id where seat_id = 1) as c inner join seat_detail on c.flight_id = seat_detail.flight_id where seat_id = 2
+
+select airport_name, airport_location from (select stopover from flight inner join flight_detail on flight.flight_id = flight_detail.flight_id) as a inner join airport on a.stopover = airport_id
+
+select * from (select price as class1price from flight inner join ticket_price on flight.route_id = ticket_price.route_id where flight.flight_id = 1 and seat_id = 1) as a inner join (select price as class2price from flight inner join ticket_price on flight.route_id = ticket_price.route_id where flight.flight_id = 1 and seat_id = 2) as b on 1 = 1
+
+insert into ticket values (

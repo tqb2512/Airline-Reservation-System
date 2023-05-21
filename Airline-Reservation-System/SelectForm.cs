@@ -94,6 +94,7 @@ namespace Airline_Reservation_System
                     kryptonDataGridView1.Columns[3].Width = (int)(kryptonDataGridView1.Width * passenger.idNumberWidth);
                     break;
                 case "Flight":
+                    this.Size = new Size(1200, 500);
                     Flight flight = new Flight();
                     kryptonDataGridView1.Columns[0].Width = (int)(kryptonDataGridView1.Width * flight.idWidth);
                     kryptonDataGridView1.Columns[1].Width = (int)(kryptonDataGridView1.Width * flight.fromWidth);
