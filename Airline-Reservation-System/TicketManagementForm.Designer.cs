@@ -38,8 +38,6 @@
             label3 = new Label();
             label2 = new Label();
             Ticket_ID_textBox = new TextBox();
-            Empty_Seat_textBox = new TextBox();
-            label6 = new Label();
             groupBox3 = new GroupBox();
             tableLayoutPanel6 = new TableLayoutPanel();
             Flight_DepartureAP_textBox = new TextBox();
@@ -66,12 +64,11 @@
             Search_Ticket_Information_tableLayoutPanel = new TableLayoutPanel();
             Search_Departure_textBox = new TextBox();
             Search_PasengerName_textBox = new TextBox();
-            Search_TicketPrice_textBox = new TextBox();
-            Search_SeatName_textBox = new TextBox();
-            Search_EmptySeat_textBox = new TextBox();
             Search_ArrivalAP_textBox = new TextBox();
             Search_DepartureAP_textBox = new TextBox();
             Search_Ticket_ID_textBox = new TextBox();
+            Search_SeatName_textBox = new TextBox();
+            Search_TicketPrice_textBox = new TextBox();
             Search_tableLayoutPanel = new TableLayoutPanel();
             Search_Airport_Location_textBox = new TextBox();
             Search_Airport_Name_textBox = new TextBox();
@@ -145,8 +142,6 @@
             tableLayoutPanel4.Controls.Add(label3, 0, 2);
             tableLayoutPanel4.Controls.Add(label2, 0, 1);
             tableLayoutPanel4.Controls.Add(Ticket_ID_textBox, 1, 0);
-            tableLayoutPanel4.Controls.Add(Empty_Seat_textBox, 1, 3);
-            tableLayoutPanel4.Controls.Add(label6, 0, 3);
             tableLayoutPanel4.Location = new Point(11, 65);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 5;
@@ -211,24 +206,6 @@
             Ticket_ID_textBox.Name = "Ticket_ID_textBox";
             Ticket_ID_textBox.Size = new Size(406, 39);
             Ticket_ID_textBox.TabIndex = 3;
-            // 
-            // Empty_Seat_textBox
-            // 
-            Empty_Seat_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Empty_Seat_textBox.Location = new Point(224, 201);
-            Empty_Seat_textBox.Name = "Empty_Seat_textBox";
-            Empty_Seat_textBox.Size = new Size(406, 39);
-            Empty_Seat_textBox.TabIndex = 6;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Location = new Point(3, 198);
-            label6.Name = "label6";
-            label6.Size = new Size(215, 66);
-            label6.TabIndex = 7;
-            label6.Text = "Số ghế trống";
             // 
             // groupBox3
             // 
@@ -498,8 +475,7 @@
             // Search_Ticket_Information_tableLayoutPanel
             // 
             Search_Ticket_Information_tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_Ticket_Information_tableLayoutPanel.ColumnCount = 8;
-            Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            Search_Ticket_Information_tableLayoutPanel.ColumnCount = 7;
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
@@ -513,12 +489,11 @@
             Search_Ticket_Information_tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_Departure_textBox, 2, 0);
             Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_PasengerName_textBox, 1, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_TicketPrice_textBox, 7, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_SeatName_textBox, 6, 0);
-            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_EmptySeat_textBox, 5, 0);
             Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_ArrivalAP_textBox, 4, 0);
             Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_DepartureAP_textBox, 3, 0);
             Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_Ticket_ID_textBox, 0, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_SeatName_textBox, 5, 0);
+            Search_Ticket_Information_tableLayoutPanel.Controls.Add(Search_TicketPrice_textBox, 6, 0);
             Search_Ticket_Information_tableLayoutPanel.Location = new Point(3, 3);
             Search_Ticket_Information_tableLayoutPanel.Name = "Search_Ticket_Information_tableLayoutPanel";
             Search_Ticket_Information_tableLayoutPanel.RowCount = 1;
@@ -530,70 +505,40 @@
             // Search_Departure_textBox
             // 
             Search_Departure_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_Departure_textBox.Location = new Point(485, 4);
+            Search_Departure_textBox.Location = new Point(553, 4);
             Search_Departure_textBox.Margin = new Padding(3, 4, 3, 4);
             Search_Departure_textBox.Name = "Search_Departure_textBox";
-            Search_Departure_textBox.Size = new Size(235, 39);
+            Search_Departure_textBox.Size = new Size(269, 39);
             Search_Departure_textBox.TabIndex = 7;
             Search_Departure_textBox.TextChanged += SearchTextBox;
             // 
             // Search_PasengerName_textBox
             // 
             Search_PasengerName_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_PasengerName_textBox.Location = new Point(244, 4);
+            Search_PasengerName_textBox.Location = new Point(278, 4);
             Search_PasengerName_textBox.Margin = new Padding(3, 4, 3, 4);
             Search_PasengerName_textBox.Name = "Search_PasengerName_textBox";
-            Search_PasengerName_textBox.Size = new Size(235, 39);
+            Search_PasengerName_textBox.Size = new Size(269, 39);
             Search_PasengerName_textBox.TabIndex = 6;
             Search_PasengerName_textBox.TextChanged += SearchTextBox;
-            // 
-            // Search_TicketPrice_textBox
-            // 
-            Search_TicketPrice_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_TicketPrice_textBox.Location = new Point(1690, 4);
-            Search_TicketPrice_textBox.Margin = new Padding(3, 4, 3, 4);
-            Search_TicketPrice_textBox.Name = "Search_TicketPrice_textBox";
-            Search_TicketPrice_textBox.Size = new Size(237, 39);
-            Search_TicketPrice_textBox.TabIndex = 5;
-            Search_TicketPrice_textBox.TextChanged += SearchTextBox;
-            // 
-            // Search_SeatName_textBox
-            // 
-            Search_SeatName_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_SeatName_textBox.Location = new Point(1449, 4);
-            Search_SeatName_textBox.Margin = new Padding(3, 4, 3, 4);
-            Search_SeatName_textBox.Name = "Search_SeatName_textBox";
-            Search_SeatName_textBox.Size = new Size(235, 39);
-            Search_SeatName_textBox.TabIndex = 4;
-            Search_SeatName_textBox.TextChanged += SearchTextBox;
-            // 
-            // Search_EmptySeat_textBox
-            // 
-            Search_EmptySeat_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_EmptySeat_textBox.Location = new Point(1208, 4);
-            Search_EmptySeat_textBox.Margin = new Padding(3, 4, 3, 4);
-            Search_EmptySeat_textBox.Name = "Search_EmptySeat_textBox";
-            Search_EmptySeat_textBox.Size = new Size(235, 39);
-            Search_EmptySeat_textBox.TabIndex = 3;
-            Search_EmptySeat_textBox.TextChanged += SearchTextBox;
             // 
             // Search_ArrivalAP_textBox
             // 
             Search_ArrivalAP_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_ArrivalAP_textBox.Location = new Point(967, 4);
+            Search_ArrivalAP_textBox.Location = new Point(1103, 4);
             Search_ArrivalAP_textBox.Margin = new Padding(3, 4, 3, 4);
             Search_ArrivalAP_textBox.Name = "Search_ArrivalAP_textBox";
-            Search_ArrivalAP_textBox.Size = new Size(235, 39);
+            Search_ArrivalAP_textBox.Size = new Size(269, 39);
             Search_ArrivalAP_textBox.TabIndex = 2;
             Search_ArrivalAP_textBox.TextChanged += SearchTextBox;
             // 
             // Search_DepartureAP_textBox
             // 
             Search_DepartureAP_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Search_DepartureAP_textBox.Location = new Point(726, 4);
+            Search_DepartureAP_textBox.Location = new Point(828, 4);
             Search_DepartureAP_textBox.Margin = new Padding(3, 4, 3, 4);
             Search_DepartureAP_textBox.Name = "Search_DepartureAP_textBox";
-            Search_DepartureAP_textBox.Size = new Size(235, 39);
+            Search_DepartureAP_textBox.Size = new Size(269, 39);
             Search_DepartureAP_textBox.TabIndex = 1;
             Search_DepartureAP_textBox.TextChanged += SearchTextBox;
             // 
@@ -603,9 +548,29 @@
             Search_Ticket_ID_textBox.Location = new Point(3, 4);
             Search_Ticket_ID_textBox.Margin = new Padding(3, 4, 3, 4);
             Search_Ticket_ID_textBox.Name = "Search_Ticket_ID_textBox";
-            Search_Ticket_ID_textBox.Size = new Size(235, 39);
+            Search_Ticket_ID_textBox.Size = new Size(269, 39);
             Search_Ticket_ID_textBox.TabIndex = 0;
             Search_Ticket_ID_textBox.TextChanged += SearchTextBox;
+            // 
+            // Search_SeatName_textBox
+            // 
+            Search_SeatName_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Search_SeatName_textBox.Location = new Point(1378, 4);
+            Search_SeatName_textBox.Margin = new Padding(3, 4, 3, 4);
+            Search_SeatName_textBox.Name = "Search_SeatName_textBox";
+            Search_SeatName_textBox.Size = new Size(269, 39);
+            Search_SeatName_textBox.TabIndex = 4;
+            Search_SeatName_textBox.TextChanged += SearchTextBox;
+            // 
+            // Search_TicketPrice_textBox
+            // 
+            Search_TicketPrice_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Search_TicketPrice_textBox.Location = new Point(1653, 4);
+            Search_TicketPrice_textBox.Margin = new Padding(3, 4, 3, 4);
+            Search_TicketPrice_textBox.Name = "Search_TicketPrice_textBox";
+            Search_TicketPrice_textBox.Size = new Size(274, 39);
+            Search_TicketPrice_textBox.TabIndex = 5;
+            Search_TicketPrice_textBox.TextChanged += SearchTextBox;
             // 
             // Search_tableLayoutPanel
             // 
@@ -708,8 +673,6 @@
         private TextBox Search_Airport_Name_textBox;
         private TextBox Search_Price_textBox;
         private TextBox Search_Route_ID_textBox;
-        private TextBox Empty_Seat_textBox;
-        private Label label6;
         public Krypton.Toolkit.KryptonDataGridView Ticket_dataGridView;
         private TableLayoutPanel tableLayoutPanel7;
         private TableLayoutPanel Search_Ticket_Information_tableLayoutPanel;
@@ -717,7 +680,6 @@
         private TextBox Search_PasengerName_textBox;
         private TextBox Search_TicketPrice_textBox;
         private TextBox Search_SeatName_textBox;
-        private TextBox Search_EmptySeat_textBox;
         private TextBox Search_ArrivalAP_textBox;
         private TextBox Search_DepartureAP_textBox;
         private TextBox Search_Ticket_ID_textBox;
