@@ -19,6 +19,11 @@ namespace Airline_Reservation_System
             dataLoad();
         }
 
+        float idColumnWidth = 0.15f;
+        float departureColumnWidth = 0.25f;
+        float arrivalNumColumnWidth = 0.25f;
+        float flightTimeColumnWidth = 0.35f;
+
         Route route = new Route();
 
         private void dataLoad()
@@ -33,6 +38,11 @@ namespace Airline_Reservation_System
             routeDataGridView.Columns["airport_arrive_id"].HeaderText = "Arrival";
             routeDataGridView.Columns["flight_time"].HeaderText = "Flight Time";
 
+            routeDataGridView.Columns["route_id"].Width = (int)(routeDataGridView.Width * idColumnWidth);
+            routeDataGridView.Columns["airport_start_id"].Width = (int)(routeDataGridView.Width * departureColumnWidth);
+            routeDataGridView.Columns["airport_arrive_id"].Width = (int)(routeDataGridView.Width * arrivalNumColumnWidth);
+            routeDataGridView.Columns["flight_time"].Width = (int)(routeDataGridView.Width * flightTimeColumnWidth);
+
             R_ID_TextBox.ReadOnly = true;
             R_Departure_TextBox.ReadOnly = true;
             R_Arrival_TextBox.ReadOnly = true;  
@@ -42,6 +52,44 @@ namespace Airline_Reservation_System
             R_Departure_TextBox.Enabled = false;
             R_Arrival_TextBox.Enabled = false;
             R_FlightTime_TextBox.Enabled = false;
+        }
+
+        private void Search_textBox_TextChanged(object sender, EventArgs e)
+        {
+            string filter = "";
+            foreach (Control control in R_SearchTableLayoutPanel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    if (control.Text != "")
+                    {
+                        switch (control.Name)
+                        {
+                            case "idRouteSearchTextBox":
+                                filter += "CONVERT(route_id, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                            case "departureSearchTextBox":
+                                filter += "CONVERT(airport_start_id, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                            case "arrivalSearchTextBox":
+                                filter += "CONVERT(airport_arrive_id, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                            case "flightTimeSearchTextBox":
+                                filter += "CONVERT(flight_time, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                        }
+                    }
+                }
+            }
+            if (filter != "")
+            {
+                filter = filter.Substring(0, filter.Length - 4);
+                (routeDataGridView.DataSource as DataTable).DefaultView.RowFilter = filter;
+            }
+            else
+            {
+                (routeDataGridView.DataSource as DataTable).DefaultView.RowFilter = null;
+            }
         }
 
         private void R_addButton_Click(object sender, EventArgs e)

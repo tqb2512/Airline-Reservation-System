@@ -19,6 +19,12 @@ namespace Airline_Reservation_System
             dataLoad();
         }
 
+        float idColumnWidth = 0.15f;
+        float nameColumnWidth = 0.3f;
+        float phoneNumColumnWidth = 0.25f;
+        float idNumColumnWidth = 0.3f;
+
+
         Passenger passenger = new Passenger();
 
         private void dataLoad()
@@ -32,6 +38,11 @@ namespace Airline_Reservation_System
             passengerDataGridView.Columns["passenger_phone"].HeaderText = "Phone Number";
             passengerDataGridView.Columns["passenger_id_number"].HeaderText = "ID Number";
 
+            passengerDataGridView.Columns["passenger_id"].Width = (int)(passengerDataGridView.Width * idColumnWidth);
+            passengerDataGridView.Columns["passenger_name"].Width = (int)(passengerDataGridView.Width * nameColumnWidth);
+            passengerDataGridView.Columns["passenger_phone"].Width = (int)(passengerDataGridView.Width * phoneNumColumnWidth);
+            passengerDataGridView.Columns["passenger_id_number"].Width = (int)(passengerDataGridView.Width * idNumColumnWidth);
+
             P_ID_TextBox.ReadOnly = true;
             P_FullName_TextBox.ReadOnly = true;
             P_PhoneNumber_TextBox.ReadOnly = true;
@@ -41,6 +52,44 @@ namespace Airline_Reservation_System
             P_FullName_TextBox.Enabled = false;
             P_PhoneNumber_TextBox.Enabled = false;
             P_IDNumber_TextBox.Enabled = false;
+        }
+
+        private void Search_textBox_TextChanged(object sender, EventArgs e)
+        {
+            string filter = "";
+            foreach (Control control in P_SearchTableLayoutPanel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    if (control.Text != "")
+                    {
+                        switch (control.Name)
+                        {
+                            case "passengerIDSearchTextBox":
+                                filter += "CONVERT(passenger_id, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                            case "nameSearchTextBox":
+                                filter += "CONVERT(passenger_name, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                            case "phoneNumSearchTextBox":
+                                filter += "CONVERT(passenger_phone, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                            case "idNumSearchTextBox":
+                                filter += "CONVERT(passenger_id_number, System.String) LIKE '%" + control.Text + "%' AND ";
+                                break;
+                        }
+                    }
+                }
+            }
+            if (filter != "")
+            {
+                filter = filter.Substring(0, filter.Length - 4);
+                (passengerDataGridView.DataSource as DataTable).DefaultView.RowFilter = filter;
+            }
+            else
+            {
+                (passengerDataGridView.DataSource as DataTable).DefaultView.RowFilter = null;
+            }
         }
 
         private void addPassengerButton_Click(object sender, EventArgs e)

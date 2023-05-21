@@ -59,6 +59,11 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.R_addButton = new Krypton.Toolkit.KryptonButton();
             this.R_refreshButton = new Krypton.Toolkit.KryptonButton();
+            this.R_SearchTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.idRouteSearchTextBox = new System.Windows.Forms.TextBox();
+            this.departureSearchTextBox = new System.Windows.Forms.TextBox();
+            this.arrivalSearchTextBox = new System.Windows.Forms.TextBox();
+            this.flightTimeSearchTextBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
@@ -93,6 +98,7 @@
             this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.routeDataGridView)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
+            this.R_SearchTableLayoutPanel.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
@@ -425,6 +431,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Controls.Add(this.routeDataGridView, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel12, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.R_SearchTableLayoutPanel, 0, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(1, 26);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
@@ -436,6 +443,10 @@
             // 
             // routeDataGridView
             // 
+            this.routeDataGridView.AllowUserToAddRows = false;
+            this.routeDataGridView.AllowUserToDeleteRows = false;
+            this.routeDataGridView.AllowUserToResizeColumns = false;
+            this.routeDataGridView.AllowUserToResizeRows = false;
             this.routeDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -443,6 +454,8 @@
             this.routeDataGridView.Location = new System.Drawing.Point(2, 47);
             this.routeDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.routeDataGridView.Name = "routeDataGridView";
+            this.routeDataGridView.ReadOnly = true;
+            this.routeDataGridView.RowHeadersVisible = false;
             this.routeDataGridView.RowHeadersWidth = 72;
             this.routeDataGridView.RowTemplate.Height = 37;
             this.routeDataGridView.Size = new System.Drawing.Size(955, 323);
@@ -486,6 +499,61 @@
             this.R_refreshButton.TabIndex = 2;
             this.R_refreshButton.Values.Text = "Refresh";
             this.R_refreshButton.Click += new System.EventHandler(this.R_refreshButton_Click);
+            // 
+            // R_SearchTableLayoutPanel
+            // 
+            this.R_SearchTableLayoutPanel.ColumnCount = 4;
+            this.R_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.R_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.R_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.R_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.R_SearchTableLayoutPanel.Controls.Add(this.idRouteSearchTextBox, 0, 0);
+            this.R_SearchTableLayoutPanel.Controls.Add(this.departureSearchTextBox, 1, 0);
+            this.R_SearchTableLayoutPanel.Controls.Add(this.arrivalSearchTextBox, 2, 0);
+            this.R_SearchTableLayoutPanel.Controls.Add(this.flightTimeSearchTextBox, 3, 0);
+            this.R_SearchTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.R_SearchTableLayoutPanel.Name = "R_SearchTableLayoutPanel";
+            this.R_SearchTableLayoutPanel.RowCount = 1;
+            this.R_SearchTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.R_SearchTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.R_SearchTableLayoutPanel.Size = new System.Drawing.Size(953, 39);
+            this.R_SearchTableLayoutPanel.TabIndex = 3;
+            // 
+            // idRouteSearchTextBox
+            // 
+            this.idRouteSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.idRouteSearchTextBox.Location = new System.Drawing.Point(3, 6);
+            this.idRouteSearchTextBox.Name = "idRouteSearchTextBox";
+            this.idRouteSearchTextBox.Size = new System.Drawing.Size(136, 27);
+            this.idRouteSearchTextBox.TabIndex = 0;
+            this.idRouteSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
+            // 
+            // departureSearchTextBox
+            // 
+            this.departureSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.departureSearchTextBox.Location = new System.Drawing.Point(145, 6);
+            this.departureSearchTextBox.Name = "departureSearchTextBox";
+            this.departureSearchTextBox.Size = new System.Drawing.Size(232, 27);
+            this.departureSearchTextBox.TabIndex = 1;
+            this.departureSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
+            // 
+            // arrivalSearchTextBox
+            // 
+            this.arrivalSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.arrivalSearchTextBox.Location = new System.Drawing.Point(383, 6);
+            this.arrivalSearchTextBox.Name = "arrivalSearchTextBox";
+            this.arrivalSearchTextBox.Size = new System.Drawing.Size(232, 27);
+            this.arrivalSearchTextBox.TabIndex = 2;
+            this.arrivalSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
+            // 
+            // flightTimeSearchTextBox
+            // 
+            this.flightTimeSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.flightTimeSearchTextBox.Location = new System.Drawing.Point(621, 6);
+            this.flightTimeSearchTextBox.Name = "flightTimeSearchTextBox";
+            this.flightTimeSearchTextBox.Size = new System.Drawing.Size(329, 27);
+            this.flightTimeSearchTextBox.TabIndex = 3;
+            this.flightTimeSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
             // 
             // groupBox4
             // 
@@ -710,6 +778,8 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.routeDataGridView)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
+            this.R_SearchTableLayoutPanel.ResumeLayout(false);
+            this.R_SearchTableLayoutPanel.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
@@ -754,7 +824,6 @@
         private TableLayoutPanel tableLayoutPanel8;
         private GroupBox groupBox3;
         private TableLayoutPanel tableLayoutPanel9;
-        private Krypton.Toolkit.KryptonDataGridView routeDataGridView;
         private TableLayoutPanel tableLayoutPanel12;
         private Krypton.Toolkit.KryptonButton R_addButton;
         private Krypton.Toolkit.KryptonButton R_refreshButton;
@@ -775,5 +844,11 @@
         private TableLayoutPanel tableLayoutPanel18;
         private Krypton.Toolkit.KryptonButton R_deteleButton;
         private Krypton.Toolkit.KryptonButton R_editButton;
+        private TableLayoutPanel R_SearchTableLayoutPanel;
+        private TextBox idRouteSearchTextBox;
+        private TextBox departureSearchTextBox;
+        private TextBox arrivalSearchTextBox;
+        private TextBox flightTimeSearchTextBox;
+        public Krypton.Toolkit.KryptonDataGridView routeDataGridView;
     }
 }

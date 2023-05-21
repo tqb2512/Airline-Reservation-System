@@ -35,6 +35,11 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.addPassengerButton = new Krypton.Toolkit.KryptonButton();
             this.refreshButton = new Krypton.Toolkit.KryptonButton();
+            this.P_SearchTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.passengerIDSearchTextBox = new System.Windows.Forms.TextBox();
+            this.nameSearchTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumSearchTextBox = new System.Windows.Forms.TextBox();
+            this.idNumSearchTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,6 +64,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passengerDataGridView)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            this.P_SearchTableLayoutPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -102,10 +108,14 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.passengerDataGridView, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.P_SearchTableLayoutPanel, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 26);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -117,6 +127,10 @@
             // 
             // passengerDataGridView
             // 
+            this.passengerDataGridView.AllowUserToAddRows = false;
+            this.passengerDataGridView.AllowUserToDeleteRows = false;
+            this.passengerDataGridView.AllowUserToResizeColumns = false;
+            this.passengerDataGridView.AllowUserToResizeRows = false;
             this.passengerDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -124,14 +138,20 @@
             this.passengerDataGridView.Location = new System.Drawing.Point(2, 47);
             this.passengerDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.passengerDataGridView.Name = "passengerDataGridView";
+            this.passengerDataGridView.ReadOnly = true;
+            this.passengerDataGridView.RowHeadersVisible = false;
             this.passengerDataGridView.RowHeadersWidth = 72;
             this.passengerDataGridView.RowTemplate.Height = 37;
+            this.passengerDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.passengerDataGridView.Size = new System.Drawing.Size(955, 323);
             this.passengerDataGridView.TabIndex = 0;
             this.passengerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.passengerDataGridView_CellContentClick);
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -148,7 +168,9 @@
             // 
             // addPassengerButton
             // 
-            this.addPassengerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addPassengerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addPassengerButton.CornerRoundingRadius = -1F;
             this.addPassengerButton.Location = new System.Drawing.Point(478, 2);
             this.addPassengerButton.Margin = new System.Windows.Forms.Padding(2);
@@ -160,6 +182,9 @@
             // 
             // refreshButton
             // 
+            this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshButton.CornerRoundingRadius = -1F;
             this.refreshButton.Location = new System.Drawing.Point(717, 3);
             this.refreshButton.Name = "refreshButton";
@@ -168,8 +193,65 @@
             this.refreshButton.Values.Text = "Refresh";
             this.refreshButton.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
+            // P_SearchTableLayoutPanel
+            // 
+            this.P_SearchTableLayoutPanel.ColumnCount = 4;
+            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.P_SearchTableLayoutPanel.Controls.Add(this.passengerIDSearchTextBox, 0, 0);
+            this.P_SearchTableLayoutPanel.Controls.Add(this.nameSearchTextBox, 1, 0);
+            this.P_SearchTableLayoutPanel.Controls.Add(this.phoneNumSearchTextBox, 2, 0);
+            this.P_SearchTableLayoutPanel.Controls.Add(this.idNumSearchTextBox, 3, 0);
+            this.P_SearchTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.P_SearchTableLayoutPanel.Name = "P_SearchTableLayoutPanel";
+            this.P_SearchTableLayoutPanel.RowCount = 1;
+            this.P_SearchTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.P_SearchTableLayoutPanel.Size = new System.Drawing.Size(953, 39);
+            this.P_SearchTableLayoutPanel.TabIndex = 3;
+            // 
+            // passengerIDSearchTextBox
+            // 
+            this.passengerIDSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.passengerIDSearchTextBox.Location = new System.Drawing.Point(3, 6);
+            this.passengerIDSearchTextBox.Name = "passengerIDSearchTextBox";
+            this.passengerIDSearchTextBox.Size = new System.Drawing.Size(136, 27);
+            this.passengerIDSearchTextBox.TabIndex = 0;
+            this.passengerIDSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
+            // 
+            // nameSearchTextBox
+            // 
+            this.nameSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameSearchTextBox.Location = new System.Drawing.Point(145, 6);
+            this.nameSearchTextBox.Name = "nameSearchTextBox";
+            this.nameSearchTextBox.Size = new System.Drawing.Size(279, 27);
+            this.nameSearchTextBox.TabIndex = 1;
+            this.nameSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
+            // 
+            // phoneNumSearchTextBox
+            // 
+            this.phoneNumSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.phoneNumSearchTextBox.Location = new System.Drawing.Point(430, 6);
+            this.phoneNumSearchTextBox.Name = "phoneNumSearchTextBox";
+            this.phoneNumSearchTextBox.Size = new System.Drawing.Size(232, 27);
+            this.phoneNumSearchTextBox.TabIndex = 2;
+            this.phoneNumSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
+            // 
+            // idNumSearchTextBox
+            // 
+            this.idNumSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.idNumSearchTextBox.Location = new System.Drawing.Point(668, 6);
+            this.idNumSearchTextBox.Name = "idNumSearchTextBox";
+            this.idNumSearchTextBox.Size = new System.Drawing.Size(282, 27);
+            this.idNumSearchTextBox.TabIndex = 3;
+            this.idNumSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.tableLayoutPanel4);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
@@ -181,6 +263,9 @@
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -200,6 +285,9 @@
             // 
             // tableLayoutPanel10
             // 
+            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
@@ -209,14 +297,14 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(477, 50);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(477, 52);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 15);
+            this.label4.Location = new System.Drawing.Point(3, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(208, 20);
             this.label4.TabIndex = 0;
@@ -225,13 +313,16 @@
             // P_IDNumber_TextBox
             // 
             this.P_IDNumber_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.P_IDNumber_TextBox.Location = new System.Drawing.Point(217, 11);
+            this.P_IDNumber_TextBox.Location = new System.Drawing.Point(217, 12);
             this.P_IDNumber_TextBox.Name = "P_IDNumber_TextBox";
             this.P_IDNumber_TextBox.Size = new System.Drawing.Size(257, 27);
             this.P_IDNumber_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel7
             // 
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
@@ -241,14 +332,14 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(477, 50);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(477, 52);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 15);
+            this.label3.Location = new System.Drawing.Point(3, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(208, 20);
             this.label3.TabIndex = 0;
@@ -257,13 +348,16 @@
             // P_PhoneNumber_TextBox
             // 
             this.P_PhoneNumber_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.P_PhoneNumber_TextBox.Location = new System.Drawing.Point(217, 11);
+            this.P_PhoneNumber_TextBox.Location = new System.Drawing.Point(217, 12);
             this.P_PhoneNumber_TextBox.Name = "P_PhoneNumber_TextBox";
             this.P_PhoneNumber_TextBox.Size = new System.Drawing.Size(257, 27);
             this.P_PhoneNumber_TextBox.TabIndex = 1;
             // 
             // tableLayoutPanel6
             // 
+            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
@@ -296,6 +390,9 @@
             // 
             // tableLayoutPanel5
             // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
@@ -328,6 +425,9 @@
             // 
             // tableLayoutPanel11
             // 
+            this.tableLayoutPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel11.ColumnCount = 3;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.5F));
@@ -343,6 +443,7 @@
             // 
             // P_deleteButton
             // 
+            this.P_deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.P_deleteButton.CornerRoundingRadius = -1F;
             this.P_deleteButton.Location = new System.Drawing.Point(217, 3);
             this.P_deleteButton.Name = "P_deleteButton";
@@ -353,6 +454,7 @@
             // 
             // P_editButton
             // 
+            this.P_editButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.P_editButton.CornerRoundingRadius = -1F;
             this.P_editButton.Location = new System.Drawing.Point(348, 3);
             this.P_editButton.Name = "P_editButton";
@@ -362,6 +464,9 @@
             // 
             // tableLayoutPanel8
             // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -374,6 +479,9 @@
             // 
             // tableLayoutPanel9
             // 
+            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel9.ColumnCount = 2;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -399,6 +507,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.passengerDataGridView)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.P_SearchTableLayoutPanel.ResumeLayout(false);
+            this.P_SearchTableLayoutPanel.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
@@ -417,7 +527,6 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Krypton.Toolkit.KryptonDataGridView passengerDataGridView;
         private Krypton.Toolkit.KryptonButton addPassengerButton;
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel2;
@@ -442,5 +551,11 @@
         private TableLayoutPanel tableLayoutPanel11;
         private Krypton.Toolkit.KryptonButton P_deleteButton;
         private Krypton.Toolkit.KryptonButton P_editButton;
+        private TableLayoutPanel P_SearchTableLayoutPanel;
+        private TextBox passengerIDSearchTextBox;
+        private TextBox nameSearchTextBox;
+        private TextBox phoneNumSearchTextBox;
+        private TextBox idNumSearchTextBox;
+        public Krypton.Toolkit.KryptonDataGridView passengerDataGridView;
     }
 }
