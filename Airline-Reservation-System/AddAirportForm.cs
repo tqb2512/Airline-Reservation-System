@@ -16,5 +16,26 @@ namespace Airline_Reservation_System
         {
             InitializeComponent();
         }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            //Add flight
+            try
+            {
+                string query = "INSERT INTO Airport (airport_name, airport_location) VALUES ('" + airportNameTextBox.Text + "', '" + airportLocationTextBox.Text + "')";
+                sqlFunction.sqlQueryExcute(query);
+                MessageBox.Show("Airport added successfully!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AddAirportForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }
