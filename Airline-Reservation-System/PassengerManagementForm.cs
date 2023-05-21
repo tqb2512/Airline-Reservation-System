@@ -43,6 +43,11 @@ namespace Airline_Reservation_System
             passengerDataGridView.Columns["passenger_phone"].Width = (int)(passengerDataGridView.Width * phoneNumColumnWidth);
             passengerDataGridView.Columns["passenger_id_number"].Width = (int)(passengerDataGridView.Width * idNumColumnWidth);
 
+            P_SearchTableLayoutPanel.ColumnStyles[0].Width = (int)(P_SearchTableLayoutPanel.Width * idColumnWidth);
+            P_SearchTableLayoutPanel.ColumnStyles[1].Width = (int)(P_SearchTableLayoutPanel.Width * nameColumnWidth);
+            P_SearchTableLayoutPanel.ColumnStyles[2].Width = (int)(P_SearchTableLayoutPanel.Width * phoneNumColumnWidth);
+            P_SearchTableLayoutPanel.ColumnStyles[3].Width = (int)(P_SearchTableLayoutPanel.Width * idNumColumnWidth);
+
             P_ID_TextBox.ReadOnly = true;
             P_FullName_TextBox.ReadOnly = true;
             P_PhoneNumber_TextBox.ReadOnly = true;
@@ -52,6 +57,19 @@ namespace Airline_Reservation_System
             P_FullName_TextBox.Enabled = false;
             P_PhoneNumber_TextBox.Enabled = false;
             P_IDNumber_TextBox.Enabled = false;
+        }
+
+        private void P_MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            passengerDataGridView.Columns["passenger_id"].Width = (int)(passengerDataGridView.Width * idColumnWidth);
+            passengerDataGridView.Columns["passenger_name"].Width = (int)(passengerDataGridView.Width * nameColumnWidth);
+            passengerDataGridView.Columns["passenger_phone"].Width = (int)(passengerDataGridView.Width * phoneNumColumnWidth);
+            passengerDataGridView.Columns["passenger_id_number"].Width = (int)(passengerDataGridView.Width * idNumColumnWidth);
+
+            P_SearchTableLayoutPanel.ColumnStyles[0].Width = (int)(P_SearchTableLayoutPanel.Width * idColumnWidth);
+            P_SearchTableLayoutPanel.ColumnStyles[1].Width = (int)(P_SearchTableLayoutPanel.Width * nameColumnWidth);
+            P_SearchTableLayoutPanel.ColumnStyles[2].Width = (int)(P_SearchTableLayoutPanel.Width * phoneNumColumnWidth);
+            P_SearchTableLayoutPanel.ColumnStyles[3].Width = (int)(P_SearchTableLayoutPanel.Width * idNumColumnWidth);
         }
 
         private void Search_textBox_TextChanged(object sender, EventArgs e)

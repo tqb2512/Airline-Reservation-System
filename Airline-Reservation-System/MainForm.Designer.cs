@@ -48,7 +48,8 @@
             this.managementToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1076, 38);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(717, 26);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,41 +62,41 @@
             this.passengerToolStripMenuItem,
             this.routeToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(155, 34);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
             this.managementToolStripMenuItem.Text = "Management";
             // 
             // flightToolStripMenuItem
             // 
             this.flightToolStripMenuItem.Name = "flightToolStripMenuItem";
-            this.flightToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.flightToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.flightToolStripMenuItem.Text = "Flight";
             this.flightToolStripMenuItem.Click += new System.EventHandler(this.flightToolStripMenuItem_Click);
             // 
             // airportToolStripMenuItem
             // 
             this.airportToolStripMenuItem.Name = "airportToolStripMenuItem";
-            this.airportToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.airportToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.airportToolStripMenuItem.Text = "Airport";
             this.airportToolStripMenuItem.Click += new System.EventHandler(this.airportToolStripMenuItem_Click);
             // 
             // ticketToolStripMenuItem
             // 
             this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
-            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.ticketToolStripMenuItem.Text = "Ticket";
             this.ticketToolStripMenuItem.Click += new System.EventHandler(this.ticketToolStripMenuItem_Click);
             // 
             // passengerToolStripMenuItem
             // 
             this.passengerToolStripMenuItem.Name = "passengerToolStripMenuItem";
-            this.passengerToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.passengerToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.passengerToolStripMenuItem.Text = "Passenger";
             this.passengerToolStripMenuItem.Click += new System.EventHandler(this.passengerToolStripMenuItem_Click);
             // 
             // routeToolStripMenuItem
             // 
             this.routeToolStripMenuItem.Name = "routeToolStripMenuItem";
-            this.routeToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.routeToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.routeToolStripMenuItem.Text = "Route";
             this.routeToolStripMenuItem.Click += new System.EventHandler(this.routeToolStripMenuItem_Click);
             // 
@@ -104,23 +105,25 @@
             this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainTabControl.Location = new System.Drawing.Point(0, 41);
+            this.mainTabControl.Location = new System.Drawing.Point(0, 28);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.NavigatorMode = Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.mainTabControl.PageBackStyle = Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.mainTabControl.Size = new System.Drawing.Size(1076, 683);
+            this.mainTabControl.Size = new System.Drawing.Size(717, 461);
             this.mainTabControl.TabIndex = 4;
             this.mainTabControl.Text = "kryptonNavigator1";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1076, 736);
+            this.ClientSize = new System.Drawing.Size(717, 491);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.menuStrip1.ResumeLayout(false);

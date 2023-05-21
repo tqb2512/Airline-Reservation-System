@@ -43,6 +43,12 @@ namespace Airline_Reservation_System
             routeDataGridView.Columns["airport_arrive_id"].Width = (int)(routeDataGridView.Width * arrivalNumColumnWidth);
             routeDataGridView.Columns["flight_time"].Width = (int)(routeDataGridView.Width * flightTimeColumnWidth);
 
+            R_SearchTableLayoutPanel.ColumnStyles[0].Width = (int)(R_SearchTableLayoutPanel.Width * idColumnWidth);
+            R_SearchTableLayoutPanel.ColumnStyles[1].Width = (int)(R_SearchTableLayoutPanel.Width * departureColumnWidth);
+            R_SearchTableLayoutPanel.ColumnStyles[2].Width = (int)(R_SearchTableLayoutPanel.Width * arrivalNumColumnWidth);
+            R_SearchTableLayoutPanel.ColumnStyles[3].Width = (int)(R_SearchTableLayoutPanel.Width * flightTimeColumnWidth);
+
+
             R_ID_TextBox.ReadOnly = true;
             R_Departure_TextBox.ReadOnly = true;
             R_Arrival_TextBox.ReadOnly = true;  
@@ -52,6 +58,19 @@ namespace Airline_Reservation_System
             R_Departure_TextBox.Enabled = false;
             R_Arrival_TextBox.Enabled = false;
             R_FlightTime_TextBox.Enabled = false;
+        }
+
+        private void R_MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            routeDataGridView.Columns["route_id"].Width = (int)(routeDataGridView.Width * idColumnWidth);
+            routeDataGridView.Columns["airport_start_id"].Width = (int)(routeDataGridView.Width * departureColumnWidth);
+            routeDataGridView.Columns["airport_arrive_id"].Width = (int)(routeDataGridView.Width * arrivalNumColumnWidth);
+            routeDataGridView.Columns["flight_time"].Width = (int)(routeDataGridView.Width * flightTimeColumnWidth);
+
+            R_SearchTableLayoutPanel.ColumnStyles[0].Width = (int)(R_SearchTableLayoutPanel.Width * idColumnWidth);
+            R_SearchTableLayoutPanel.ColumnStyles[1].Width = (int)(R_SearchTableLayoutPanel.Width * departureColumnWidth);
+            R_SearchTableLayoutPanel.ColumnStyles[2].Width = (int)(R_SearchTableLayoutPanel.Width * arrivalNumColumnWidth);
+            R_SearchTableLayoutPanel.ColumnStyles[3].Width = (int)(R_SearchTableLayoutPanel.Width * flightTimeColumnWidth);
         }
 
         private void Search_textBox_TextChanged(object sender, EventArgs e)

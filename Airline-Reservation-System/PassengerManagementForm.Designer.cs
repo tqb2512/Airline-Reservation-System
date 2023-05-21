@@ -195,11 +195,14 @@
             // 
             // P_SearchTableLayoutPanel
             // 
+            this.P_SearchTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.P_SearchTableLayoutPanel.ColumnCount = 4;
-            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.P_SearchTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.P_SearchTableLayoutPanel.Controls.Add(this.passengerIDSearchTextBox, 0, 0);
             this.P_SearchTableLayoutPanel.Controls.Add(this.nameSearchTextBox, 1, 0);
             this.P_SearchTableLayoutPanel.Controls.Add(this.phoneNumSearchTextBox, 2, 0);
@@ -213,26 +216,32 @@
             // 
             // passengerIDSearchTextBox
             // 
-            this.passengerIDSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passengerIDSearchTextBox.Location = new System.Drawing.Point(3, 6);
+            this.passengerIDSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.passengerIDSearchTextBox.Location = new System.Drawing.Point(3, 3);
             this.passengerIDSearchTextBox.Name = "passengerIDSearchTextBox";
-            this.passengerIDSearchTextBox.Size = new System.Drawing.Size(136, 27);
+            this.passengerIDSearchTextBox.Size = new System.Drawing.Size(232, 27);
             this.passengerIDSearchTextBox.TabIndex = 0;
             this.passengerIDSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
             // 
             // nameSearchTextBox
             // 
-            this.nameSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameSearchTextBox.Location = new System.Drawing.Point(145, 6);
+            this.nameSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameSearchTextBox.Location = new System.Drawing.Point(241, 3);
             this.nameSearchTextBox.Name = "nameSearchTextBox";
-            this.nameSearchTextBox.Size = new System.Drawing.Size(279, 27);
+            this.nameSearchTextBox.Size = new System.Drawing.Size(232, 27);
             this.nameSearchTextBox.TabIndex = 1;
             this.nameSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
             // 
             // phoneNumSearchTextBox
             // 
-            this.phoneNumSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.phoneNumSearchTextBox.Location = new System.Drawing.Point(430, 6);
+            this.phoneNumSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.phoneNumSearchTextBox.Location = new System.Drawing.Point(479, 3);
             this.phoneNumSearchTextBox.Name = "phoneNumSearchTextBox";
             this.phoneNumSearchTextBox.Size = new System.Drawing.Size(232, 27);
             this.phoneNumSearchTextBox.TabIndex = 2;
@@ -240,10 +249,12 @@
             // 
             // idNumSearchTextBox
             // 
-            this.idNumSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.idNumSearchTextBox.Location = new System.Drawing.Point(668, 6);
+            this.idNumSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.idNumSearchTextBox.Location = new System.Drawing.Point(717, 3);
             this.idNumSearchTextBox.Name = "idNumSearchTextBox";
-            this.idNumSearchTextBox.Size = new System.Drawing.Size(282, 27);
+            this.idNumSearchTextBox.Size = new System.Drawing.Size(233, 27);
             this.idNumSearchTextBox.TabIndex = 3;
             this.idNumSearchTextBox.TextChanged += new System.EventHandler(this.Search_textBox_TextChanged);
             // 
@@ -502,6 +513,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PassengerManagementForm";
             this.Text = "PassengerManagementForm";
+            this.SizeChanged += new System.EventHandler(this.P_MainForm_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
