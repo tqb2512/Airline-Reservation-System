@@ -77,6 +77,7 @@
             this.kryptonDataGridView1.RowHeadersVisible = false;
             this.kryptonDataGridView1.RowHeadersWidth = 72;
             this.kryptonDataGridView1.RowTemplate.Height = 37;
+            this.kryptonDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(770, 320);
             this.kryptonDataGridView1.TabIndex = 1;
             this.kryptonDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellClick);
@@ -103,6 +104,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SelectForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();

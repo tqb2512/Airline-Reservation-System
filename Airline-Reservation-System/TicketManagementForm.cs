@@ -133,7 +133,7 @@ namespace Airline_Reservation_System
 
         private void Ticket_dataGridView_SizeChanged_1(object sender, EventArgs e)
         {
-            Ticket_dataGridView.Columns["TICKET_ID"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
+            Ticket_dataGridView.Columns["ticket_id"].Width = (int)(Ticket_dataGridView.Width * idTicketColumn);
             Ticket_dataGridView.Columns["PASSENGER_NAME"].Width = (int)(Ticket_dataGridView.Width * namePassengerColumn);
             Ticket_dataGridView.Columns["DEPARTURE"].Width = (int)(Ticket_dataGridView.Width * departureColumn);
             Ticket_dataGridView.Columns["DepartureAirport"].Width = (int)(Ticket_dataGridView.Width * departureAirportColumn);

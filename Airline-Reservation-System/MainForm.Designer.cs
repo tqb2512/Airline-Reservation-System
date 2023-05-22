@@ -50,7 +50,7 @@
             this.bookingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1076, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1576, 38);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,7 +117,7 @@
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.NavigatorMode = Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.mainTabControl.PageBackStyle = Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.mainTabControl.Size = new System.Drawing.Size(1076, 683);
+            this.mainTabControl.Size = new System.Drawing.Size(1576, 883);
             this.mainTabControl.TabIndex = 4;
             this.mainTabControl.Text = "kryptonNavigator1";
             // 
@@ -126,11 +126,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1076, 736);
+            this.ClientSize = new System.Drawing.Size(1576, 936);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

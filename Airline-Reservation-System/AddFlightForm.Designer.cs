@@ -275,6 +275,7 @@
             this.ClientSize = new System.Drawing.Size(1258, 711);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddFlightForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddFlightForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

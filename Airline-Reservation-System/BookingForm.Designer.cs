@@ -65,7 +65,7 @@
             this.class2amount = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.confirmButton = new Krypton.Toolkit.KryptonButton();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.priceBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -536,6 +536,10 @@
             this.class1amount.Name = "class1amount";
             this.class1amount.Size = new System.Drawing.Size(672, 35);
             this.class1amount.TabIndex = 2;
+            this.class1amount.Text = "0";
+            this.class1amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.class1amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.class1amount_KeyDown);
+            this.class1amount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.class1amount_KeyDown);
             // 
             // class2amount
             // 
@@ -544,6 +548,10 @@
             this.class2amount.Name = "class2amount";
             this.class2amount.Size = new System.Drawing.Size(672, 35);
             this.class2amount.TabIndex = 3;
+            this.class2amount.Text = "0";
+            this.class2amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.class2amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.class1amount_KeyDown);
+            this.class2amount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.class1amount_KeyDown);
             // 
             // tableLayoutPanel8
             // 
@@ -554,7 +562,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.confirmButton, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox10, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.priceBox, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 1026);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -575,14 +583,16 @@
             this.confirmButton.Values.Text = "Confirm";
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
-            // textBox10
+            // priceBox
             // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(129, 10);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(232, 35);
-            this.textBox10.TabIndex = 1;
+            this.priceBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.priceBox.Enabled = false;
+            this.priceBox.Location = new System.Drawing.Point(129, 10);
+            this.priceBox.Name = "priceBox";
+            this.priceBox.Size = new System.Drawing.Size(232, 35);
+            this.priceBox.TabIndex = 1;
+            this.priceBox.Text = "0";
+            this.priceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BookingForm
             // 
@@ -592,6 +602,7 @@
             this.ClientSize = new System.Drawing.Size(1010, 1109);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BookingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -651,7 +662,7 @@
         private TextBox class2amount;
         private TableLayoutPanel tableLayoutPanel8;
         private Krypton.Toolkit.KryptonButton confirmButton;
-        private TextBox textBox10;
+        private TextBox priceBox;
         private Label label10;
         private TextBox flightDate;
     }

@@ -121,7 +121,7 @@
             // kryptonTextBox1
             // 
             this.kryptonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox1.Location = new System.Drawing.Point(235, 24);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(235, 25);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(538, 35);
             this.kryptonTextBox1.TabIndex = 4;
@@ -129,7 +129,7 @@
             // kryptonTextBox2
             // 
             this.kryptonTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox2.Location = new System.Drawing.Point(235, 109);
+            this.kryptonTextBox2.Location = new System.Drawing.Point(235, 110);
             this.kryptonTextBox2.Name = "kryptonTextBox2";
             this.kryptonTextBox2.Size = new System.Drawing.Size(538, 35);
             this.kryptonTextBox2.TabIndex = 5;
@@ -137,7 +137,7 @@
             // kryptonTextBox3
             // 
             this.kryptonTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox3.Location = new System.Drawing.Point(235, 194);
+            this.kryptonTextBox3.Location = new System.Drawing.Point(235, 195);
             this.kryptonTextBox3.Name = "kryptonTextBox3";
             this.kryptonTextBox3.Size = new System.Drawing.Size(538, 35);
             this.kryptonTextBox3.TabIndex = 6;
@@ -145,7 +145,7 @@
             // kryptonTextBox4
             // 
             this.kryptonTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox4.Location = new System.Drawing.Point(235, 279);
+            this.kryptonTextBox4.Location = new System.Drawing.Point(235, 280);
             this.kryptonTextBox4.Name = "kryptonTextBox4";
             this.kryptonTextBox4.Size = new System.Drawing.Size(538, 35);
             this.kryptonTextBox4.TabIndex = 7;
@@ -168,6 +168,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddRouteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRouteForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
