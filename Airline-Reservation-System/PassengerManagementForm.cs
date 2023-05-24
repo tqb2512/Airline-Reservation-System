@@ -76,7 +76,7 @@ namespace Airline_Reservation_System
                                 filter += "CONVERT(passenger_name, 'System.String') LIKE '%" + control.Text + "%' AND ";
                                 break;
                             case "phoneNumber":
-                                filter += "CONVERT(passenger_phone_number, 'System.String') LIKE '%" + control.Text + "%' AND ";
+                                filter += "CONVERT(passenger_phone, 'System.String') LIKE '%" + control.Text + "%' AND ";
                                 break;
                             case "idNumber":
                                 filter += "CONVERT(passenger_id_number, 'System.String') LIKE '%" + control.Text + "%' AND ";

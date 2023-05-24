@@ -149,6 +149,7 @@
             this.flightIdSearch.Name = "flightIdSearch";
             this.flightIdSearch.Size = new System.Drawing.Size(110, 35);
             this.flightIdSearch.TabIndex = 7;
+            this.flightIdSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // nameSearch
             // 
@@ -160,6 +161,7 @@
             this.nameSearch.Name = "nameSearch";
             this.nameSearch.Size = new System.Drawing.Size(110, 35);
             this.nameSearch.TabIndex = 6;
+            this.nameSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // fromSearch
             // 
@@ -171,6 +173,7 @@
             this.fromSearch.Name = "fromSearch";
             this.fromSearch.Size = new System.Drawing.Size(110, 35);
             this.fromSearch.TabIndex = 2;
+            this.fromSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // departureSearch
             // 
@@ -182,6 +185,7 @@
             this.departureSearch.Name = "departureSearch";
             this.departureSearch.Size = new System.Drawing.Size(110, 35);
             this.departureSearch.TabIndex = 1;
+            this.departureSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // idSearch
             // 
@@ -193,6 +197,7 @@
             this.idSearch.Name = "idSearch";
             this.idSearch.Size = new System.Drawing.Size(110, 35);
             this.idSearch.TabIndex = 0;
+            this.idSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // toSearch
             // 
@@ -204,6 +209,7 @@
             this.toSearch.Name = "toSearch";
             this.toSearch.Size = new System.Drawing.Size(110, 35);
             this.toSearch.TabIndex = 4;
+            this.toSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // classSearch
             // 
@@ -215,6 +221,7 @@
             this.classSearch.Name = "classSearch";
             this.classSearch.Size = new System.Drawing.Size(110, 35);
             this.classSearch.TabIndex = 5;
+            this.classSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // priceSearch
             // 
@@ -225,6 +232,7 @@
             this.priceSearch.Name = "priceSearch";
             this.priceSearch.Size = new System.Drawing.Size(112, 35);
             this.priceSearch.TabIndex = 8;
+            this.priceSearch.TextChanged += new System.EventHandler(this.SearchTextBox);
             // 
             // tableLayoutPanel7
             // 
