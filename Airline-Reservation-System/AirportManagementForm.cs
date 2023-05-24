@@ -97,5 +97,11 @@ namespace Airline_Reservation_System
             Search_tableLayoutPanel.ColumnStyles[1].Width = (int)Search_tableLayoutPanel.Width / 3;
             Search_tableLayoutPanel.ColumnStyles[2].Width = (int)Search_tableLayoutPanel.Width / 3;
         }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+            sqlFunction.sqlQueryExcute("DELETE FROM airport WHERE airport_id = '" + Airport_dataGridView.CurrentRow.Cells[0].Value.ToString() + "'");
+            dataLoad();
+        }
     }
 }

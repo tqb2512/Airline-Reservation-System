@@ -63,7 +63,7 @@
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(158, 43);
             this.confirmButton.TabIndex = 0;
-            this.confirmButton.Values.Text = "kryptonButton1";
+            this.confirmButton.Values.Text = "Confirm";
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // kryptonDataGridView1

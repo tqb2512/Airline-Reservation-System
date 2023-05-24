@@ -23,7 +23,7 @@ create table route
 	airport_arrive_id int not null,
 	flight_time int not null,
 	foreign key (airport_start_id) references airport(airport_id) on delete cascade,
-	foreign key (airport_arrive_id) references airport(airport_id) on delete cascade,
+	foreign key (airport_arrive_id) references airport(airport_id),
 )
 
 create table flight
@@ -43,7 +43,7 @@ create table flight_detail
 	stopover int,
 	note varchar(100) not null,
 	foreign key (flight_id) references flight(flight_id) on delete cascade,
-	foreign key (stopover) references airport(airport_id) on delete cascade,
+	foreign key (stopover) references airport(airport_id),
 )
 
 create table seat_detail
@@ -54,7 +54,7 @@ create table seat_detail
 	empty_amount int not null,
 	reserved_amount int not null,
 	foreign key (flight_id) references flight(flight_id) on delete cascade,
-	foreign key (seat_id) references seat_info(seat_id) on delete cascade,
+	foreign key (seat_id) references seat_info(seat_id),
 )
 
 create table ticket_price
@@ -64,7 +64,7 @@ create table ticket_price
 	seat_id int not null,
 	price int not null,
 	foreign key (route_id) references route(route_id) on delete cascade,
-	foreign key (seat_id) references seat_info(seat_id) on delete cascade,
+	foreign key (seat_id) references seat_info(seat_id),
 )
 
 create table passenger
@@ -82,8 +82,8 @@ create table ticket
 	ticket_price_id int not null,
 	passenger_id int not null,
 	foreign key (flight_id) references flight(flight_id) on delete cascade,
-	foreign key (ticket_price_id) references ticket_price(ticket_price_id) on delete cascade,
-	foreign key (passenger_id) references passenger(passenger_id) on delete cascade,
+	foreign key (ticket_price_id) references ticket_price(ticket_price_id),
+	foreign key (passenger_id) references passenger(passenger_id),
 )
 
 create table reserve_ticket
@@ -95,8 +95,8 @@ create table reserve_ticket
 	date datetime not null,
 	status int not null,
 	foreign key (flight_id) references flight(flight_id) on delete cascade,
-	foreign key (ticket_price_id) references ticket_price(ticket_price_id) on delete cascade,
-	foreign key (passenger_id) references passenger(passenger_id) on delete cascade,
+	foreign key (ticket_price_id) references ticket_price(ticket_price_id),
+	foreign key (passenger_id) references passenger(passenger_id),
 )
 
 go
