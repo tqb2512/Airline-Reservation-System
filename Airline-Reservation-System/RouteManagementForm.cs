@@ -16,7 +16,7 @@ namespace Airline_Reservation_System
         {
             InitializeComponent();
             dataLoad();
-            this.SizeChanged += RouteManagementForm_SizeChanged;
+            this.SizeChanged += new EventHandler(RouteManagementForm_SizeChanged);
         }
 
         double routeIdWidth = 0.2;
