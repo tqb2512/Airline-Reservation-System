@@ -52,6 +52,8 @@ namespace Airline_Reservation_System
 
         private void kryptonDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
             DataTable routeDetail = sqlFunction.getSqlDataTable("select route_id, airport.airport_name as start, airport.airport_location as start_location, b.airport_name as arrive, b.airport_location as arrive_location from route inner join airport on airport_start_id = airport_id inner join airport as b on airport_arrive_id = b.airport_id where route_id = '" + kryptonDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + "'");
             DataTable class1price = sqlFunction.getSqlDataTable("select price from ticket_price where route_id = '" + kryptonDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + "' and seat_id = 1");
             DataTable class2price = sqlFunction.getSqlDataTable("select price from ticket_price where route_id = '" + kryptonDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + "' and seat_id = 2");

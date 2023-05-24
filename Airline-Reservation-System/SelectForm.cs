@@ -283,6 +283,10 @@ namespace Airline_Reservation_System
 
         private void kryptonDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
             selectedID = kryptonDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 

@@ -106,7 +106,7 @@
             this.kryptonDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(1046, 332);
             this.kryptonDataGridView1.TabIndex = 0;
-            this.kryptonDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellClick);
+            this.kryptonDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellClick);
             // 
             // searchLayout
             // 
