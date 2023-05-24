@@ -273,7 +273,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FlightManagementForm";
             this.Text = "FlightManagementForm";
-            this.SizeChanged += new System.EventHandler(this.FlightManagementForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.flightDataGridView)).EndInit();
             this.search_layout.ResumeLayout(false);
             this.search_layout.PerformLayout();

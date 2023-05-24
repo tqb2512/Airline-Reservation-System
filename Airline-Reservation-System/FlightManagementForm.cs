@@ -25,6 +25,7 @@ namespace Airline_Reservation_System
         {
             InitializeComponent();
             dataLoad();
+            this.SizeChanged += new EventHandler(FlightManagementForm_SizeChanged);
         }
 
         private void addFlightButton_Click(object sender, EventArgs e)

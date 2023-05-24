@@ -16,6 +16,7 @@ namespace Airline_Reservation_System
         {
             InitializeComponent();
             loadData();
+            this.SizeChanged += PassengerManagementForm_SizeChanged;
         }
 
         float idWidth = 0.15f;

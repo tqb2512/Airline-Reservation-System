@@ -442,7 +442,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RouteManagementForm";
             this.Text = "RouteManagementForm";
-            this.SizeChanged += new System.EventHandler(this.RouteManagementForm_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.searchLayout.ResumeLayout(false);

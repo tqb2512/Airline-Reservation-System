@@ -196,7 +196,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PassengerManagementForm";
             this.Text = "PassengerManagementForm";
-            this.SizeChanged += new System.EventHandler(this.PassengerManagementForm_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
