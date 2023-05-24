@@ -36,6 +36,7 @@
             this.passengerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainTabControl = new Krypton.Navigator.KryptonNavigator();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).BeginInit();
@@ -47,7 +48,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.managementToolStripMenuItem,
-            this.bookingToolStripMenuItem});
+            this.bookingToolStripMenuItem,
+            this.statisticalToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1576, 38);
@@ -108,6 +110,13 @@
             this.bookingToolStripMenuItem.Text = "Booking";
             this.bookingToolStripMenuItem.Click += new System.EventHandler(this.bookingToolStripMenuItem_Click);
             // 
+            // statisticalToolStripMenuItem
+            // 
+            this.statisticalToolStripMenuItem.Name = "statisticalToolStripMenuItem";
+            this.statisticalToolStripMenuItem.Size = new System.Drawing.Size(118, 34);
+            this.statisticalToolStripMenuItem.Text = "Statistical";
+            this.statisticalToolStripMenuItem.Click += new System.EventHandler(this.statisticalToolStripMenuItem_Click);
+            // 
             // mainTabControl
             // 
             this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -151,5 +160,6 @@
         private ToolStripMenuItem routeToolStripMenuItem;
         private Krypton.Navigator.KryptonNavigator mainTabControl;
         private ToolStripMenuItem bookingToolStripMenuItem;
+        private ToolStripMenuItem statisticalToolStripMenuItem;
     }
 }

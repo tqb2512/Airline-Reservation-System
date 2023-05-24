@@ -62,5 +62,10 @@ namespace Airline_Reservation_System
             BookingForm bookingForm = new BookingForm();
             bookingForm.ShowDialog();
         }
+
+        private void statisticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addToTabControl(new StatisticalForm(), "Statistical");
+        }
     }
 }

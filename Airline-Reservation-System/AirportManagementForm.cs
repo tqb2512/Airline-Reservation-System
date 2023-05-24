@@ -27,6 +27,7 @@ namespace Airline_Reservation_System
         private void AirportManagementForm_Load(object sender, EventArgs e)
         {
             dataLoad();
+            this.SizeChanged += AirportManagementForm_SizeChanged;
         }
 
         private void dataLoad()
@@ -37,26 +38,12 @@ namespace Airline_Reservation_System
             Airport_dataGridView.Columns["airport_id"].HeaderText = "Mã sân bay";
             Airport_dataGridView.Columns["airport_name"].HeaderText = "Tên sân bay";
             Airport_dataGridView.Columns["airport_location"].HeaderText = "Địa điểm";
-
-            Airport_dataGridView.Columns[0].Width = this.Width / 3;
-            Airport_dataGridView.Columns[1].Width = this.Width / 3;
-            Airport_dataGridView.Columns[2].Width = this.Width / 3;
-
-            Search_tableLayoutPanel.ColumnStyles[0].Width = this.Width / 3;
-            Search_tableLayoutPanel.ColumnStyles[1].Width = this.Width / 3;
-            Search_tableLayoutPanel.ColumnStyles[2].Width = this.Width / 3;
-
-            Airport_dataGridView.RowHeadersVisible = false;
-
-            Airport_dataGridView.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
-            Airport_dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             AddAirportForm form = new AddAirportForm();
             form.ShowDialog();
-            dataLoad();
         }
 
         private void Search_Airport_Location_textBox_TextChanged(object sender, EventArgs e)
@@ -93,6 +80,22 @@ namespace Airline_Reservation_System
             {
                 (Airport_dataGridView.DataSource as DataTable).DefaultView.RowFilter = null;
             }
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            dataLoad();
+        }
+
+        private void AirportManagementForm_SizeChanged(object sender, EventArgs e)
+        {
+            Airport_dataGridView.Columns[0].Width = (int)Airport_dataGridView.Width / 3;
+            Airport_dataGridView.Columns[1].Width = (int)Airport_dataGridView.Width / 3;
+            Airport_dataGridView.Columns[2].Width = (int)Airport_dataGridView.Width / 3;
+
+            Search_tableLayoutPanel.ColumnStyles[0].Width = (int)Search_tableLayoutPanel.Width / 3;
+            Search_tableLayoutPanel.ColumnStyles[1].Width = (int)Search_tableLayoutPanel.Width / 3;
+            Search_tableLayoutPanel.ColumnStyles[2].Width = (int)Search_tableLayoutPanel.Width / 3;
         }
     }
 }

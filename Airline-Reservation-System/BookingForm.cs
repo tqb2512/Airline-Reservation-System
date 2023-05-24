@@ -45,7 +45,7 @@ namespace Airline_Reservation_System
         private void newPassengerButton_Click(object sender, EventArgs e)
         {
             newPassenger = 1;
-            passengerID.Text = "";
+            passengerID.Text = sqlFunction.sqlQueryExcute("select max(passenger_id) + 1 from passenger").ToString();
             passengerName.Text = "";
             passengerPhoneNumber.Text = "";
             passengerIDNumber.Text = "";
@@ -57,7 +57,7 @@ namespace Airline_Reservation_System
         private void selectFlightButton_Click(object sender, EventArgs e)
         {
             string FlightId;
-            DataTable flight = sqlFunction.getSqlDataTable("select c.flight_id, start, arrive, departure, flight_time, class1_empty, empty_amount as class2_empty from (select b.flight_id, route_id, departure, start, arrive, flight_time, empty_amount as class1_empty, reserved_amount as class1_reserved from (select flight_id, route_id, departure, airport_location as start, airport_location as arrive, flight_time from (select flight_id, flight.route_id, departure, airport_location as start, airport_arrive_id, flight_time from flight inner join route on flight.route_id = route.route_id inner join airport on airport_start_id = airport_id) as a inner join airport on airport_arrive_id = airport_id) as b inner join seat_detail on b.flight_id = seat_detail.flight_id where seat_id = 1) as c inner join seat_detail on c.flight_id = seat_detail.flight_id where seat_id = 2");
+            DataTable flight = sqlFunction.getSqlDataTable("select c.flight_id, start, arrive, departure, flight_time, class1_empty, empty_amount as class2_empty from (select b.flight_id, route_id, departure, start, arrive, flight_time, empty_amount as class1_empty, reserved_amount as class1_reserved from (select flight_id, route_id, departure, start, airport_location as arrive, flight_time from (select flight_id, flight.route_id, departure, airport_location as start, airport_arrive_id, flight_time from flight inner join route on flight.route_id = route.route_id inner join airport on airport_start_id = airport_id) as a inner join airport on airport_arrive_id = airport_id) as b inner join seat_detail on b.flight_id = seat_detail.flight_id where seat_id = 1) as c inner join seat_detail on c.flight_id = seat_detail.flight_id where seat_id = 2");
             using (SelectForm selectForm = new SelectForm())
             {
                 selectForm.loadData(flight, "Flight");
@@ -66,7 +66,7 @@ namespace Airline_Reservation_System
             }
             if (FlightId != null)
             {
-                DataTable flightInfo = sqlFunction.getSqlDataTable("select c.flight_id, departure, start, arrive, flight_time, class1_empty, class1_reserved, empty_amount as class2_empty, reserved_amount as class2_reserved from (select b.flight_id, route_id, departure, start, arrive, flight_time, empty_amount as class1_empty, reserved_amount as class1_reserved from (select flight_id, route_id, departure, airport_location as start, airport_location as arrive, flight_time from (select flight_id, flight.route_id, departure, airport_location as start, airport_arrive_id, flight_time from flight inner join route on flight.route_id = route.route_id inner join airport on airport_start_id = airport_id) as a inner join airport on airport_arrive_id = airport_id) as b inner join seat_detail on b.flight_id = seat_detail.flight_id where seat_id = 1) as c inner join seat_detail on c.flight_id = seat_detail.flight_id where seat_id = 2 and c.flight_id = '" + FlightId + "'");
+                DataTable flightInfo = sqlFunction.getSqlDataTable("select c.flight_id, departure, start, arrive, flight_time, class1_empty, class1_reserved, empty_amount as class2_empty, reserved_amount as class2_reserved from (select b.flight_id, route_id, departure, start, arrive, flight_time, empty_amount as class1_empty, reserved_amount as class1_reserved from (select flight_id, route_id, departure, start, airport_location as arrive, flight_time from (select flight_id, flight.route_id, departure, airport_location as start, airport_arrive_id, flight_time from flight inner join route on flight.route_id = route.route_id inner join airport on airport_start_id = airport_id) as a inner join airport on airport_arrive_id = airport_id) as b inner join seat_detail on b.flight_id = seat_detail.flight_id where seat_id = 1) as c inner join seat_detail on c.flight_id = seat_detail.flight_id where seat_id = 2 and c.flight_id = '" + FlightId + "'");
                 flightID.Text = flightInfo.Rows[0]["flight_id"].ToString();
                 flightStart.Text = flightInfo.Rows[0]["start"].ToString();
                 flightDate.Text = flightInfo.Rows[0]["departure"].ToString();
@@ -85,7 +85,7 @@ namespace Airline_Reservation_System
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            if (passengerID.Text == "")
+            if (passengerName.Text == "")
             {
                 MessageBox.Show("Please select passenger");
                 return;
@@ -100,16 +100,31 @@ namespace Airline_Reservation_System
                 MessageBox.Show("Please select ticket amount");
                 return;
             }
+            DataTable seatRemain = sqlFunction.getSqlDataTable("select class1_empty, empty_amount as class2_empty from (select flight_id, empty_amount as class1_empty from seat_detail where flight_id = " + flightID.Text + " and seat_id = 1) as a inner join seat_detail on a.flight_id = seat_detail.flight_id where seat_id = 2");
+            if (Convert.ToInt32(class1amount.Text) > Convert.ToInt32(seatRemain.Rows[0]["class1_empty"]))
+            {
+                MessageBox.Show("Class 1 seat not enough");
+                return;
+            }
+            if (Convert.ToInt32(class2amount.Text) > Convert.ToInt32(seatRemain.Rows[0]["class2_empty"]))
+            {
+                MessageBox.Show("Class 2 seat not enough");
+                return;
+            }
             if (newPassenger == 1)
             {
                 sqlFunction.sqlQueryExcute("insert into passenger (passenger_name, passenger_phone, passenger_id_number) values ('" + passengerName.Text + "', '" + passengerPhoneNumber.Text + "', '" + passengerIDNumber.Text + "')");
                 for (int i = 0; i < Convert.ToInt32(class1amount.Text); i++)
                 {
                     sqlFunction.sqlQueryExcute("insert into ticket (passenger_id, flight_id, ticket_price_id) values ((select max(passenger_id) from passenger), '" + flightID.Text + "', 1)");
+                    sqlFunction.sqlQueryExcute("update seat_detail set reserved_amount = reserved_amount + 1 where flight_id = '" + flightID.Text + "' and seat_id = 1");
+                    sqlFunction.sqlQueryExcute("update seat_detail set empty_amount = empty_amount - 1 where flight_id = '" + flightID.Text + "' and seat_id = 1");
                 }
                 for (int i = 0; i < Convert.ToInt32(class2amount.Text); i++)
                 {
                     sqlFunction.sqlQueryExcute("insert into ticket (passenger_id, flight_id, ticket_price_id) values ((select max(passenger_id) from passenger), '" + flightID.Text + "', 2)");
+                    sqlFunction.sqlQueryExcute("update seat_detail set reserved_amount = reserved_amount + 1 where flight_id = '" + flightID.Text + "' and seat_id = 2");
+                    sqlFunction.sqlQueryExcute("update seat_detail set empty_amount = empty_amount - 1 where flight_id = '" + flightID.Text + "' and seat_id = 2");
                 }
             }
             else
@@ -117,20 +132,20 @@ namespace Airline_Reservation_System
                 for (int i = 0; i < Convert.ToInt32(class1amount.Text); i++)
                 {
                     sqlFunction.sqlQueryExcute("insert into ticket (passenger_id, flight_id, ticket_price_id) values ('" + passengerID.Text + "', '" + flightID.Text + "', 1)");
+                    sqlFunction.sqlQueryExcute("update seat_detail set reserved_amount = reserved_amount + 1 where flight_id = '" + flightID.Text + "' and seat_id = 1");
+                    sqlFunction.sqlQueryExcute("update seat_detail set empty_amount = empty_amount - 1 where flight_id = '" + flightID.Text + "' and seat_id = 1");
                 }
                 for (int i = 0; i < Convert.ToInt32(class2amount.Text); i++)
                 {
                     sqlFunction.sqlQueryExcute("insert into ticket (passenger_id, flight_id, ticket_price_id) values ('" + passengerID.Text + "', '" + flightID.Text + "', 2)");
+                    sqlFunction.sqlQueryExcute("update seat_detail set reserved_amount = reserved_amount + 1 where flight_id = '" + flightID.Text + "' and seat_id = 2");
+                    sqlFunction.sqlQueryExcute("update seat_detail set empty_amount = empty_amount - 1 where flight_id = '" + flightID.Text + "' and seat_id = 2");
                 }
             }
             this.Close();
             MessageBox.Show("Booking Success");
         }
 
-        private void class1amount_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void class1amount_KeyDown(object sender, KeyEventArgs e)
         {

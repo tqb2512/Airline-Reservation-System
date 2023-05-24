@@ -15,22 +15,19 @@ namespace Airline_Reservation_System
         public AddAirportForm()
         {
             InitializeComponent();
+            airportIdTextBox.Text = sqlFunction.getSqlDataTable("select max(airport_id) from airport").Rows[0][0].ToString();
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            //Add flight
-            try
+            if (airportNameTextBox.Text == "" || airportLocationTextBox.Text == "")
             {
-                string query = "INSERT INTO Airport (airport_name, airport_location) VALUES ('" + airportNameTextBox.Text + "', '" + airportLocationTextBox.Text + "')";
-                sqlFunction.sqlQueryExcute(query);
-                MessageBox.Show("Airport added successfully!");
-                this.Close();
+                MessageBox.Show("Please Fill All Fields");
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            sqlFunction.sqlQueryExcute("insert into airport values (N'" + airportNameTextBox.Text + "', N'" + airportLocationTextBox.Text + "')");
+            MessageBox.Show("Add Airport Success");
+            this.Close();
         }
 
         private void AddAirportForm_FormClosed(object sender, FormClosedEventArgs e)
