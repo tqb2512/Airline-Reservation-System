@@ -102,9 +102,8 @@ namespace Airline_Reservation_System
             DialogResult dialogResult = MessageBox.Show("Delete passenger will delete all tickets relate to", "Delete Passenger", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                int index = kryptonDataGridView1.SelectedRows[0].Index;
-                string id = kryptonDataGridView1.Rows[index].Cells[0].Value.ToString();
-                sqlFunction.sqlQueryExcute("delete from passenger where passenger_id = " + id);
+                String query = "delete from passenger where passenger_id = " + kryptonDataGridView1.CurrentRow.Cells[0].Value.ToString();
+                sqlFunction.sqlQueryExcute(query);
                 loadData();
             }
         }

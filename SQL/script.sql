@@ -87,19 +87,6 @@ create table ticket
 	foreign key (passenger_id) references passenger(passenger_id),
 )
 
-create table reserve_ticket
-(
-	reserve_ticket_id int primary key identity(1,1),
-	flight_id int not null,
-	ticket_price_id int not null,
-	passenger_id int not null,
-	date datetime not null,
-	status int not null,
-	foreign key (flight_id) references flight(flight_id) on delete cascade,
-	foreign key (ticket_price_id) references ticket_price(ticket_price_id),
-	foreign key (passenger_id) references passenger(passenger_id),
-)
-
 create table attribute
 (
 	max_stop_over int not null,
@@ -144,7 +131,7 @@ insert into route values (4, 5, 50)
 insert into flight values (1, '11/11/2022', 80, 20)
 insert into flight values (2, '7/1/2023', 90, 25)
 insert into flight values (3, '9/7/2023', 80, 20)
-insert into flight values (4, '12/15/2023', 09, 25)
+insert into flight values (4, '12/15/2023', 90, 25)
 insert into flight values (5, '09/23/2023', 80, 20)
 insert into flight values (6, '8/13/2023', 80, 20)
 insert into flight values (7, '11/22/2023', 80, 20)
@@ -170,30 +157,30 @@ insert into flight_detail values (11, 4, 0,	'')
 insert into flight_detail values (12, 3, 0,	'')
 
 
-insert into seat_detail values (1, 1, 0, 0)
-insert into seat_detail values (1, 2, 0, 0)
-insert into seat_detail values (2, 1, 0, 0)
-insert into seat_detail values (2, 2, 0, 0)
-insert into seat_detail values (3, 1, 0, 0)
-insert into seat_detail values (3, 2, 0, 0)
-insert into seat_detail values (4, 1, 0, 0)
-insert into seat_detail values (4, 2, 0, 0)
-insert into seat_detail values (5, 1, 0, 0)
-insert into seat_detail values (5, 2, 0, 0)
-insert into seat_detail values (6, 1, 0, 0)
-insert into seat_detail values (6, 2, 0, 0)
-insert into seat_detail values (7, 1, 0, 0)
-insert into seat_detail values (7, 2, 0, 0)
-insert into seat_detail values (8, 1, 0, 0)
-insert into seat_detail values (8, 2, 0, 0)
-insert into seat_detail values (9, 1, 0, 0)
-insert into seat_detail values (9, 2, 0, 0)
-insert into seat_detail values (10, 1, 0, 0)
-insert into seat_detail values (10, 2, 0, 0)
-insert into seat_detail values (11, 1, 0, 0)
-insert into seat_detail values (11, 2, 0, 0)
-insert into seat_detail values (12, 1, 0, 0)
-insert into seat_detail values (12, 2, 0, 0)
+insert into seat_detail values (1, 1, 80, 0)
+insert into seat_detail values (1, 2, 20, 0)
+insert into seat_detail values (2, 1, 90, 0)
+insert into seat_detail values (2, 2, 25, 0)
+insert into seat_detail values (3, 1, 80, 0)
+insert into seat_detail values (3, 2, 20, 0)
+insert into seat_detail values (4, 1, 90, 0)
+insert into seat_detail values (4, 2, 25, 0)
+insert into seat_detail values (5, 1, 80, 0)
+insert into seat_detail values (5, 2, 20, 0)
+insert into seat_detail values (6, 1, 80, 0)
+insert into seat_detail values (6, 2, 20, 0)
+insert into seat_detail values (7, 1, 80, 0)
+insert into seat_detail values (7, 2, 20, 0)
+insert into seat_detail values (8, 1, 80, 0)
+insert into seat_detail values (8, 2, 20, 0)
+insert into seat_detail values (9, 1, 90, 0)
+insert into seat_detail values (9, 2, 22, 0)
+insert into seat_detail values (10, 1, 80, 0)
+insert into seat_detail values (10, 2, 20, 0)
+insert into seat_detail values (11, 1, 80, 0)
+insert into seat_detail values (11, 2, 20, 0)
+insert into seat_detail values (12, 1, 80, 0)
+insert into seat_detail values (12, 2, 20, 0)
 
 insert into ticket_price values (1, 1, 350)
 insert into ticket_price values (1, 2, 450)
@@ -237,36 +224,3 @@ insert into passenger values ('Nguyen Van B', '0912345678', '000012')
 insert into passenger values ('Nguyen Van C', '0912345678', '000013')
 insert into passenger values ('Nguyen Van D', '0912345678', '000014')
 insert into passenger values ('Nguyen Van E', '0912345678', '000015')
-
-select month, sum(total) as total 
-from 
-	(
-	select month, sum(total) as total 
-	from 
-		(
-		select month, sum * price as total 
-		from 
-			(
-			select month(departure) as month, route_id, sum(reserved_amount) as sum 
-			from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id 
-			where year(departure) = 2023 and seat_id = 1 group by month(departure), route_id
-			) as a 
-		inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 1
-		) as b 
-	group by month 
-	union 
-	select month, sum(total) as total 
-	from 
-		(
-		select month, sum * price as total 
-		from 
-			(
-			select month(departure) as month, route_id, sum(reserved_amount) as sum 
-			from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id 
-			where year(departure) = 2023 and seat_id = 2 
-			group by month(departure), route_id
-			) as a 
-		inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 2
-		) as b 
-	group by month
-) as b group by month
