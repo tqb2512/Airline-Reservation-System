@@ -37,8 +37,8 @@
             this.routeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainTabControl = new Krypton.Navigator.KryptonNavigator();
             this.attributeChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainTabControl = new Krypton.Navigator.KryptonNavigator();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +119,13 @@
             this.statisticalToolStripMenuItem.Text = "Statistical";
             this.statisticalToolStripMenuItem.Click += new System.EventHandler(this.statisticalToolStripMenuItem_Click);
             // 
+            // attributeChangeToolStripMenuItem
+            // 
+            this.attributeChangeToolStripMenuItem.Name = "attributeChangeToolStripMenuItem";
+            this.attributeChangeToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
+            this.attributeChangeToolStripMenuItem.Text = "Attribute Change";
+            this.attributeChangeToolStripMenuItem.Click += new System.EventHandler(this.attributeChangeToolStripMenuItem_Click);
+            // 
             // mainTabControl
             // 
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,13 +137,6 @@
             this.mainTabControl.TabIndex = 4;
             this.mainTabControl.Text = "kryptonNavigator1";
             // 
-            // attributeChangeToolStripMenuItem
-            // 
-            this.attributeChangeToolStripMenuItem.Name = "attributeChangeToolStripMenuItem";
-            this.attributeChangeToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
-            this.attributeChangeToolStripMenuItem.Text = "Attribute Change";
-            this.attributeChangeToolStripMenuItem.Click += new System.EventHandler(this.attributeChangeToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -147,8 +147,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Flight Management";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).EndInit();

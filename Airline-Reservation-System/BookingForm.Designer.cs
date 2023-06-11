@@ -600,6 +600,7 @@
             this.ClientSize = new System.Drawing.Size(1010, 1109);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BookingForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking Ticket";
             this.tableLayoutPanel1.ResumeLayout(false);

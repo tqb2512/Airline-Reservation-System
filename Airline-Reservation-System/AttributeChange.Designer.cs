@@ -218,6 +218,8 @@
             this.ClientSize = new System.Drawing.Size(895, 436);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AttributeChange";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Attribute Change";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

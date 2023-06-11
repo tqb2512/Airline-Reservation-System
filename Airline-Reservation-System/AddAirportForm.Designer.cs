@@ -144,6 +144,7 @@
             this.ClientSize = new System.Drawing.Size(800, 248);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddAirportForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Airport";
             this.tableLayoutPanel1.ResumeLayout(false);
