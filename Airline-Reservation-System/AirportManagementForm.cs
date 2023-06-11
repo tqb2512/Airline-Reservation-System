@@ -100,8 +100,17 @@ namespace Airline_Reservation_System
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
-            sqlFunction.sqlQueryExcute("DELETE FROM airport WHERE airport_id = '" + Airport_dataGridView.CurrentRow.Cells[0].Value.ToString() + "'");
-            dataLoad();
+            String query = "Select * from route where airport_start_id = " + Airport_dataGridView.CurrentRow.Cells[0].Value.ToString() + " OR airport_arrive_id = " + Airport_dataGridView.CurrentRow.Cells[0].Value.ToString();
+            if (sqlFunction.getSqlDataTable(query).Rows.Count > 0)
+            {
+                MessageBox.Show("Can't delete because exist route relate to", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                query = "Delete from airport where airport_id = " + Airport_dataGridView.CurrentRow.Cells[0].Value.ToString();
+                sqlFunction.sqlQueryExcute(query);
+                dataLoad();
+            }
         }
     }
 }

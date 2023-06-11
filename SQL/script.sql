@@ -11,9 +11,10 @@ create table seat_info
 
 create table airport
 (
-	airport_id int primary key identity(1,1),
+	airport_id int identity(1,1),
 	airport_name nvarchar(50) not null,
 	airport_location nvarchar(50) not null,
+	primary key (airport_id),
 )
 
 create table route
@@ -125,8 +126,6 @@ insert into route values (3, 2, 140)
 insert into route values (1, 5, 340)
 insert into route values (4, 1, 120)
 insert into route values (4, 2, 50)
-insert into route values (4, 3, 120)
-insert into route values (4, 5, 50)
 
 insert into flight values (1, '11/11/2022', 80, 20)
 insert into flight values (2, '7/1/2023', 90, 25)
@@ -140,8 +139,6 @@ insert into flight values (9, '6/5/2023', 90, 22)
 insert into flight values (10, '3/3/2023', 80, 20)
 insert into flight values (11, '2/2/2023', 80, 20)
 insert into flight values (12, '1/1/2023', 80, 20)
-
-
 
 insert into flight_detail values (1, 2, 45,	'')
 insert into flight_detail values (2, 1, 30,	'')
