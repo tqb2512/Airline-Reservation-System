@@ -15,6 +15,17 @@ namespace Airline_Reservation_System
         public AttributeChange()
         {
             InitializeComponent();
+            DataTable attribute = sqlFunction.getSqlDataTable("select * from attribute");
+            textBox1.Text = attribute.Rows[0]["max_stop_over"].ToString();
+            textBox2.Text = attribute.Rows[0]["min_stop_over_time"].ToString();
+            textBox3.Text = attribute.Rows[0]["max_stop_over_time"].ToString();
+            textBox4.Text = attribute.Rows[0]["min_flight_time"].ToString();
+            textBox5.Text = attribute.Rows[0]["booking_deadline"].ToString();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

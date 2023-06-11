@@ -203,6 +203,7 @@
             this.kryptonButton1.Size = new System.Drawing.Size(154, 40);
             this.kryptonButton1.TabIndex = 0;
             this.kryptonButton1.Values.Text = "Save";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // AttributeChange
             // 
