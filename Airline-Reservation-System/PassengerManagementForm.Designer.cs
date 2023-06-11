@@ -33,6 +33,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
             this.search_layout = new System.Windows.Forms.TableLayoutPanel();
             this.id = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
@@ -87,17 +88,18 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableLayoutPanel2.Controls.Add(this.kryptonButton1, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.kryptonButton2, 1, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton1, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton2, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton3, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1046, 44);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
@@ -121,6 +123,16 @@
             this.kryptonButton2.TabIndex = 2;
             this.kryptonButton2.Values.Text = "Refresh";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
+            // kryptonButton3
+            // 
+            this.kryptonButton3.CornerRoundingRadius = -1F;
+            this.kryptonButton3.Location = new System.Drawing.Point(569, 3);
+            this.kryptonButton3.Name = "kryptonButton3";
+            this.kryptonButton3.Size = new System.Drawing.Size(154, 38);
+            this.kryptonButton3.TabIndex = 3;
+            this.kryptonButton3.Values.Text = "Delete";
+            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
             // search_layout
             // 
@@ -217,5 +229,6 @@
         private TextBox name;
         private TextBox phoneNumber;
         private TextBox idNumber;
+        private Krypton.Toolkit.KryptonButton kryptonButton3;
     }
 }

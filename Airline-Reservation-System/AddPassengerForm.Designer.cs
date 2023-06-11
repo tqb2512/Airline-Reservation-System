@@ -174,7 +174,7 @@
             this.ClientSize = new System.Drawing.Size(754, 281);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddPassengerForm";
-            this.Text = "AddPassengerForm";
+            this.Text = "Add Passenger";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

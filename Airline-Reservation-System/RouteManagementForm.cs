@@ -80,7 +80,13 @@ namespace Airline_Reservation_System
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
-            
+            DialogResult dialogResult = MessageBox.Show("Delete route will delete all flight and ticket relate to", "Delete Route", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string query = "delete from route where route_id = '" + routeId.Text + "'";
+                sqlFunction.sqlQueryExcute(query);
+                dataLoad();
+            }
         }
     }
 }

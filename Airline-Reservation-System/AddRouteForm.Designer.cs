@@ -294,7 +294,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddRouteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddRouteForm";
+            this.Text = "Add Route";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

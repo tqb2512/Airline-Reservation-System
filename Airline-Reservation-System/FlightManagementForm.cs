@@ -131,5 +131,16 @@ namespace Airline_Reservation_System
         {
             dataLoad();
         }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Delete flight will delete all tickets relate to", "Delete Flight", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string query = "delete from flight where flight_id = " + flightDataGridView.CurrentRow.Cells[0].Value.ToString();
+                sqlFunction.sqlQueryExcute(query);
+                dataLoad();
+            }
+        }
     }
 }

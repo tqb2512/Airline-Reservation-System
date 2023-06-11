@@ -97,6 +97,7 @@ namespace Airline_Reservation_System
             switch (type)
             {
                 case "Passenger":
+                    this.Text = "Select Passenger";
                     this.Size = new Size(1000, 600);
                     search_layout.Controls.Clear();
                     search_layout.ColumnCount = 4;
@@ -139,6 +140,7 @@ namespace Airline_Reservation_System
                     idNumberSearch.Name = "idNumberSearch";
                     break;
                 case "Flight":
+                    this.Text = "Select Flight";
                     this.Size = new Size(1200, 700);
                     search_layout.Controls.Clear();
                     search_layout.ColumnCount = 7;
@@ -205,6 +207,7 @@ namespace Airline_Reservation_System
                     class2seatSearch.Name = "class2seatSearch";
                     break;
                 case "Route":
+                    this.Text = "Select Route";
                     Route route = new Route();
                     search_layout.Controls.Clear();
                     search_layout.ColumnCount = 4;
@@ -246,6 +249,7 @@ namespace Airline_Reservation_System
                     durationSearch.Name = "durationSearch";
                     break;
                 case "Airport":
+                    this.Text = "Select Airport";
                     Airport airport = new Airport();
                     search_layout.Controls.Clear();
                     search_layout.ColumnCount = 3;

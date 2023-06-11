@@ -145,7 +145,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddAirportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddAirportForm";
+            this.Text = "Add Airport";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

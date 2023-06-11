@@ -44,8 +44,8 @@ namespace Airline_Reservation_System
             Ticket_dataGridView.Columns["TICKET_ID"].HeaderText = "ID";
             Ticket_dataGridView.Columns["PASSENGER_NAME"].HeaderText = "Pasenger Name";
             Ticket_dataGridView.Columns["DEPARTURE"].HeaderText = "Departure";
-            Ticket_dataGridView.Columns["DepartureAirport"].HeaderText = "Departure_Airport";
-            Ticket_dataGridView.Columns["ArrivalAirport"].HeaderText = "Arrival_Airport";
+            Ticket_dataGridView.Columns["DepartureAirport"].HeaderText = "Departure Airport";
+            Ticket_dataGridView.Columns["ArrivalAirport"].HeaderText = "Arrival Airport";
             Ticket_dataGridView.Columns["SEAT_NAME"].HeaderText = "Seatname";
             Ticket_dataGridView.Columns["PRICE"].HeaderText = "Ticket Price";
             Ticket_dataGridView.Columns["FLIGHT_ID"].HeaderText = "FID";
@@ -144,6 +144,20 @@ namespace Airline_Reservation_System
         private void kryptonCheckButton1_Click(object sender, EventArgs e)
         {
             dataLoad();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this ticket?", "Delete Ticket", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string query = "DELETE FROM TICKET WHERE TICKET_ID = " + Ticket_dataGridView.SelectedRows[0].Cells["TICKET_ID"].Value.ToString();
+                sqlFunction.sqlQueryExcute(query);
+                query = "update seat_detail set reserved_amount = reserved_amount -1 and empty_amount = empty_amount +1 where seat_name = '" + Ticket_dataGridView.SelectedRows[0].Cells["SEAT_NAME"].Value.ToString() + "' and flight_id = " + Ticket_dataGridView.SelectedRows[0].Cells["FLIGHT_ID"].Value.ToString();
+                sqlFunction.sqlQueryExcute(query);
+                dataLoad();
+            }
         }
     }
 }

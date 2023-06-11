@@ -42,6 +42,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.addFlightButton = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.flightDataGridView)).BeginInit();
             this.search_layout.SuspendLayout();
@@ -211,12 +212,14 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableLayoutPanel2.Controls.Add(this.addFlightButton, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.kryptonButton1, 1, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel2.Controls.Add(this.addFlightButton, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton1, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton2, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -244,6 +247,16 @@
             this.kryptonButton1.TabIndex = 1;
             this.kryptonButton1.Values.Text = "Refresh";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
+            // kryptonButton2
+            // 
+            this.kryptonButton2.CornerRoundingRadius = -1F;
+            this.kryptonButton2.Location = new System.Drawing.Point(469, 3);
+            this.kryptonButton2.Name = "kryptonButton2";
+            this.kryptonButton2.Size = new System.Drawing.Size(154, 38);
+            this.kryptonButton2.TabIndex = 2;
+            this.kryptonButton2.Values.Text = "Delete";
+            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -298,5 +311,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
         private TableLayoutPanel tableLayoutPanel1;
+        private Krypton.Toolkit.KryptonButton kryptonButton2;
     }
 }

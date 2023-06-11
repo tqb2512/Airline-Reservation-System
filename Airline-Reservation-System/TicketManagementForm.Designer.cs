@@ -43,6 +43,7 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.kryptonCheckButton1 = new Krypton.Toolkit.KryptonCheckButton();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.Search_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Search_Airport_Location_textBox = new System.Windows.Forms.TextBox();
             this.Search_Airport_Name_textBox = new System.Windows.Forms.TextBox();
@@ -255,13 +256,16 @@
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.kryptonCheckButton1, 0, 0);
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel3.Controls.Add(this.kryptonCheckButton1, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.kryptonButton1, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(930, 44);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
@@ -269,12 +273,22 @@
             // 
             this.kryptonCheckButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonCheckButton1.CornerRoundingRadius = -1F;
-            this.kryptonCheckButton1.Location = new System.Drawing.Point(769, 3);
+            this.kryptonCheckButton1.Location = new System.Drawing.Point(773, 3);
             this.kryptonCheckButton1.Name = "kryptonCheckButton1";
-            this.kryptonCheckButton1.Size = new System.Drawing.Size(158, 38);
+            this.kryptonCheckButton1.Size = new System.Drawing.Size(154, 38);
             this.kryptonCheckButton1.TabIndex = 0;
             this.kryptonCheckButton1.Values.Text = "Refresh";
             this.kryptonCheckButton1.Click += new System.EventHandler(this.kryptonCheckButton1_Click);
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.Location = new System.Drawing.Point(613, 3);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(154, 38);
+            this.kryptonButton1.TabIndex = 1;
+            this.kryptonButton1.Values.Text = "Delete";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // Search_tableLayoutPanel
             // 
@@ -356,5 +370,6 @@
         private TextBox priceSearch;
         private TableLayoutPanel tableLayoutPanel3;
         private Krypton.Toolkit.KryptonCheckButton kryptonCheckButton1;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }

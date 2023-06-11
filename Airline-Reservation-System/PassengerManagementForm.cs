@@ -96,5 +96,17 @@ namespace Airline_Reservation_System
                 (kryptonDataGridView1.DataSource as DataTable).DefaultView.RowFilter = null;
             }
         }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Delete passenger will delete all tickets relate to", "Delete Passenger", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int index = kryptonDataGridView1.SelectedRows[0].Index;
+                string id = kryptonDataGridView1.Rows[index].Cells[0].Value.ToString();
+                sqlFunction.sqlQueryExcute("delete from passenger where passenger_id = " + id);
+                loadData();
+            }
+        }
     }
 }

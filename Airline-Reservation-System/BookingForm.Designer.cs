@@ -603,7 +603,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BookingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BookingForm";
+            this.Text = "Booking Ticket";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
