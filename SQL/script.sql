@@ -41,6 +41,7 @@ create table flight_detail
 	flight_detail_id int primary key identity(1,1),
 	flight_id int not null,
 	stopover int,
+	stopover_time int,
 	note varchar(100) not null,
 	foreign key (flight_id) references flight(flight_id) on delete cascade,
 	foreign key (stopover) references airport(airport_id),
@@ -99,7 +100,17 @@ create table reserve_ticket
 	foreign key (passenger_id) references passenger(passenger_id),
 )
 
+create table attribute
+(
+	max_stop_over int not null,
+	min_stop_over_time int not null,
+	max_stop_over_time int not null,
+	min_flight_time float not null,
+)
+
 go
+
+Insert into attribute values (2, 10, 20, 0.5)
 
 Insert into seat_info values ('A1')
 Insert into seat_info values ('A2')
