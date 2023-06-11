@@ -85,6 +85,12 @@ namespace Airline_Reservation_System
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
+            DataTable attribute = sqlFunction.getSqlDataTable("select * from attribute");
+            if (DateTime.Now > Convert.ToDateTime(flightDate.Text).AddHours(Convert.ToDouble(attribute.Rows[0]["booking_deadline"])))
+            {
+                MessageBox.Show("Booking deadline has passed");
+                return;
+            }
             if (passengerName.Text == "")
             {
                 MessageBox.Show("Please select passenger");

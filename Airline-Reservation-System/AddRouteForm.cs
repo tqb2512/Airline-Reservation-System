@@ -56,6 +56,17 @@ namespace Airline_Reservation_System
                 MessageBox.Show("Please fill all information");
                 return;
             }
+            DataTable attribute = sqlFunction.getSqlDataTable("select * from attribute");
+            if (Int32.Parse(flyTime.Text.ToString()) < Int32.Parse(attribute.Rows[0]["min_flight_time"].ToString()))
+            {
+                MessageBox.Show("Flight time is too short");
+                return;
+            }
+            if (arriveId == startId)
+            {
+                MessageBox.Show("Start and arrive airport can't be the same");
+                return;
+            }
             sqlFunction.sqlQueryExcute("insert into route values (" + startId + ", " + arriveId + ", " + flyTime.Text + ")");
             sqlFunction.sqlQueryExcute("insert into ticket_price values ((select max(route_id) from route), 1, " + class1Price.Text + ")");
             sqlFunction.sqlQueryExcute("insert into ticket_price values ((select max(route_id) from route), 2, " + class2Price.Text + ")");

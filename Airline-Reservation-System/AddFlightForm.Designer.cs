@@ -125,9 +125,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.stopOver_grid.ColumnHeadersHeight = 70;
             this.stopOver_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.stopOver_grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.stopOver_grid.Location = new System.Drawing.Point(3, 53);
             this.stopOver_grid.Name = "stopOver_grid";
-            this.stopOver_grid.ReadOnly = true;
             this.stopOver_grid.RowHeadersVisible = false;
             this.stopOver_grid.RowHeadersWidth = 72;
             this.stopOver_grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -135,7 +135,10 @@
             this.stopOver_grid.Size = new System.Drawing.Size(778, 332);
             this.stopOver_grid.TabIndex = 1;
             this.stopOver_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stopOver_grid_CellClick);
-            this.stopOver_grid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stopOver_grid_KeyPress);
+            this.stopOver_grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stopOver_grid_CellClick);
+            this.stopOver_grid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stopOver_grid_CellClick);
+            this.stopOver_grid.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.stopOver_grid_EditingControlShowing);
+            this.stopOver_grid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stopOver_grid_KeyPress_1);
             // 
             // tableLayoutPanel5
             // 

@@ -15,14 +15,6 @@ namespace Airline_Reservation_System
         public AddFlightForm()
         {
             InitializeComponent();
-            stopOver_grid.Columns.Add("airport_id", "ID");
-            stopOver_grid.Columns.Add("airport_name", "Airport Name");
-            stopOver_grid.Columns.Add("airport_location", "Location");
-            stopOver_grid.Columns.Add("stopover_time", "Stopover Time (Minutes)");
-            stopOver_grid.Columns[0].Width = stopOver_grid.Width / 4;
-            stopOver_grid.Columns[1].Width = stopOver_grid.Width / 4;
-            stopOver_grid.Columns[2].Width = stopOver_grid.Width / 4;
-            stopOver_grid.Columns[3].Width = stopOver_grid.Width / 4;
             flightDeparture.Format = DateTimePickerFormat.Custom;
             flightDeparture.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             flightID.Text = sqlFunction.getSqlDataTable("select max(flight_id) from flight").Rows[0][0].ToString();
@@ -63,6 +55,17 @@ namespace Airline_Reservation_System
                 return;
             }
             DataTable airportInfo = sqlFunction.getSqlDataTable("select airport_name, airport_location from airport where airport_id = " + airportID);
+            if (stopOver_grid.Rows.Count == 0)
+            {
+                stopOver_grid.Columns.Add("airport_id", "ID");
+                stopOver_grid.Columns.Add("airport_name", "Airport Name");
+                stopOver_grid.Columns.Add("airport_location", "Location");
+                stopOver_grid.Columns.Add("stopover_time", "Stopover Time");
+                stopOver_grid.Columns[0].Width = stopOver_grid.Width / 4;
+                stopOver_grid.Columns[1].Width = stopOver_grid.Width / 4;
+                stopOver_grid.Columns[2].Width = stopOver_grid.Width / 4;
+                stopOver_grid.Columns[3].Width = stopOver_grid.Width / 4;
+            }
             stopOver_grid.Rows.Add(airportID, airportInfo.Rows[0][0].ToString(), airportInfo.Rows[0][1].ToString(), "");
         }
 
@@ -142,18 +145,28 @@ namespace Airline_Reservation_System
 
         private void stopOver_grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 2)
+            if (e.ColumnIndex == 3)
             {
                 stopOver_grid.BeginEdit(true);
             }
         }
 
-        private void stopOver_grid_KeyPress(object sender, KeyPressEventArgs e)
+        private void stopOver_grid_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsNumber((char)e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Enter))
             {
                 e.Handled = true;
             }
+        }
+
+        private void stopOver_grid_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewTextBoxEditingControl tb = e.Control as DataGridViewTextBoxEditingControl;
+            if (tb != null)
+            {
+                tb.KeyPress += new KeyPressEventHandler(stopOver_grid_KeyPress_1);
+            }
+            e.Control.KeyPress += new KeyPressEventHandler(stopOver_grid_KeyPress_1);
         }
     }
 }

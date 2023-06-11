@@ -282,7 +282,7 @@
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(156, 48);
             this.kryptonButton1.TabIndex = 8;
-            this.kryptonButton1.Values.Text = "Xác nhận";
+            this.kryptonButton1.Values.Text = "Confirm";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // AddRouteForm

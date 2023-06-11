@@ -119,14 +119,12 @@
             // 
             // mainTabControl
             // 
-            this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainTabControl.Location = new System.Drawing.Point(0, 41);
+            this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTabControl.Location = new System.Drawing.Point(0, 38);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.NavigatorMode = Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.mainTabControl.PageBackStyle = Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.mainTabControl.Size = new System.Drawing.Size(1576, 883);
+            this.mainTabControl.Size = new System.Drawing.Size(1576, 898);
             this.mainTabControl.TabIndex = 4;
             this.mainTabControl.Text = "kryptonNavigator1";
             // 

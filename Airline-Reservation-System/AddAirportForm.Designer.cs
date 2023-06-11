@@ -133,7 +133,7 @@
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(158, 44);
             this.kryptonButton1.TabIndex = 6;
-            this.kryptonButton1.Values.Text = "Xác Nhận";
+            this.kryptonButton1.Values.Text = "Confirm";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // AddAirportForm

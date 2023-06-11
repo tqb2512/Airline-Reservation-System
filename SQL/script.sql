@@ -106,11 +106,12 @@ create table attribute
 	min_stop_over_time int not null,
 	max_stop_over_time int not null,
 	min_flight_time float not null,
+	booking_deadline int not null,
 )
 
 go
 
-Insert into attribute values (2, 10, 20, 0.5)
+Insert into attribute values (2, 10, 20, 30, 24)
 
 Insert into seat_info values ('A1')
 Insert into seat_info values ('A2')
