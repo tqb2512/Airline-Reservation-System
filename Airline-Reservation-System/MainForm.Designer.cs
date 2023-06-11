@@ -38,6 +38,7 @@
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainTabControl = new Krypton.Navigator.KryptonNavigator();
+            this.attributeChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.managementToolStripMenuItem,
             this.bookingToolStripMenuItem,
-            this.statisticalToolStripMenuItem});
+            this.statisticalToolStripMenuItem,
+            this.attributeChangeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1576, 38);
@@ -128,6 +130,13 @@
             this.mainTabControl.TabIndex = 4;
             this.mainTabControl.Text = "kryptonNavigator1";
             // 
+            // attributeChangeToolStripMenuItem
+            // 
+            this.attributeChangeToolStripMenuItem.Name = "attributeChangeToolStripMenuItem";
+            this.attributeChangeToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
+            this.attributeChangeToolStripMenuItem.Text = "Attribute Change";
+            this.attributeChangeToolStripMenuItem.Click += new System.EventHandler(this.attributeChangeToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -159,5 +168,6 @@
         private Krypton.Navigator.KryptonNavigator mainTabControl;
         private ToolStripMenuItem bookingToolStripMenuItem;
         private ToolStripMenuItem statisticalToolStripMenuItem;
+        private ToolStripMenuItem attributeChangeToolStripMenuItem;
     }
 }

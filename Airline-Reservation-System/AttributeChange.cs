@@ -25,7 +25,18 @@ namespace Airline_Reservation_System
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            
+            string query = "update attribute set max_stop_over = '" + textBox1.Text + "', min_stop_over_time = '" + textBox2.Text + "', max_stop_over_time = '" + textBox3.Text + "', min_flight_time = '" + textBox4.Text + "', booking_deadline = '" + textBox5.Text + "'";
+            sqlFunction.sqlQueryExcute(query);
+            MessageBox.Show("Change Attribute Success");
+            this.Close();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(Char.IsNumber((char)e.KeyCode) || e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.Enter))
+            {
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

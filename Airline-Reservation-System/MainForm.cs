@@ -67,5 +67,11 @@ namespace Airline_Reservation_System
         {
             addToTabControl(new StatisticalForm(), "Statistical");
         }
+
+        private void attributeChangeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AttributeChange attributeChange = new AttributeChange();
+            attributeChange.ShowDialog();
+        }
     }
 }
