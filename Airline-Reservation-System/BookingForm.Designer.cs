@@ -461,6 +461,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.stopOver.ColumnHeadersHeight = 70;
+            this.stopOver.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.stopOver.Location = new System.Drawing.Point(6, 34);
             this.stopOver.Name = "stopOver";
             this.stopOver.RowHeadersWidth = 72;

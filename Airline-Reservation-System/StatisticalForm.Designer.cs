@@ -133,11 +133,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonDataGridView1.ColumnHeadersHeight = 70;
+            this.kryptonDataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(3, 421);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
             this.kryptonDataGridView1.RowHeadersVisible = false;
             this.kryptonDataGridView1.RowHeadersWidth = 72;
             this.kryptonDataGridView1.RowTemplate.Height = 37;
+            this.kryptonDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(548, 362);
             this.kryptonDataGridView1.TabIndex = 2;
             // 
@@ -205,11 +207,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonDataGridView2.ColumnHeadersHeight = 70;
+            this.kryptonDataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.kryptonDataGridView2.Location = new System.Drawing.Point(3, 421);
             this.kryptonDataGridView2.Name = "kryptonDataGridView2";
             this.kryptonDataGridView2.RowHeadersVisible = false;
             this.kryptonDataGridView2.RowHeadersWidth = 72;
             this.kryptonDataGridView2.RowTemplate.Height = 37;
+            this.kryptonDataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.kryptonDataGridView2.Size = new System.Drawing.Size(549, 362);
             this.kryptonDataGridView2.TabIndex = 2;
             // 

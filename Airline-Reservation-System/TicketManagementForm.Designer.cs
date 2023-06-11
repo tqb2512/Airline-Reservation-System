@@ -82,6 +82,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Ticket_dataGridView.ColumnHeadersHeight = 70;
+            this.Ticket_dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.Ticket_dataGridView.Location = new System.Drawing.Point(3, 3);
             this.Ticket_dataGridView.Name = "Ticket_dataGridView";
             this.Ticket_dataGridView.ReadOnly = true;

@@ -74,11 +74,18 @@ namespace Airline_Reservation_System
                 DataTable price = sqlFunction.getSqlDataTable("select * from (select price as class1price from flight inner join ticket_price on flight.route_id = ticket_price.route_id where flight.flight_id = " + FlightId + " and seat_id = 1) as a inner join (select price as class2price from flight inner join ticket_price on flight.route_id = ticket_price.route_id where flight.flight_id = " + FlightId + " and seat_id = 2) as b on 1 = 1");
                 class1Price = Convert.ToDouble(price.Rows[0]["class1price"]);
                 class2Price = Convert.ToDouble(price.Rows[0]["class2price"]);
-                DataTable StopOver = sqlFunction.getSqlDataTable("select airport_name, airport_location from (select flight.flight_id, stopover from flight inner join flight_detail on flight.flight_id = flight_detail.flight_id) as a inner join airport on a.stopover = airport_id where flight_id = '" + FlightId + "'");
-                if (StopOver.Rows.Count != 0)
+                DataTable StopOver = sqlFunction.getSqlDataTable("select airport_name, airport_location, stopover_time from (select flight.flight_id, stopover, stopover_time from flight inner join flight_detail on flight.flight_id = flight_detail.flight_id) as a inner join airport on a.stopover = airport_id where flight_id = '" + FlightId + "'");
+                if (StopOver.Rows.Count > 0)
                 {
                     stopOver.DataSource = StopOver;
+                    stopOver.Columns[0].HeaderText = "Airport Name";
+                    stopOver.Columns[1].HeaderText = "Airport Location";
+                    stopOver.Columns[2].HeaderText = "Stopover Time";
+                    stopOver.Columns[0].Width = stopOver.Width / 3;
+                    stopOver.Columns[1].Width = stopOver.Width / 3;
+                    stopOver.Columns[2].Width = stopOver.Width / 3;
                 }
+
                 return;
             }
         }

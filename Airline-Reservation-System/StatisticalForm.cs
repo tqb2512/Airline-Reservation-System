@@ -32,7 +32,7 @@ namespace Airline_Reservation_System
 
         private void dataLoad()
         {
-            DataTable yearReport = sqlFunction.getSqlDataTable("select month, sum(total) as total from (select month, sum * price as total from (select month(departure) as month, route_id, sum(reserved_amount) as sum from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id where year(departure) = " + yearPick.Value.Year + " and seat_id = 1 group by month(departure), route_id) as a inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 1) as b group by month");
+            DataTable yearReport = sqlFunction.getSqlDataTable("select month, sum(total) as total from (select month, sum(total) as total from (select month, sum * price as total from (select month(departure) as month, route_id, sum(reserved_amount) as sum from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id where year(departure) = " + yearPick.Value.Year + " and seat_id = 1 group by month(departure), route_id) as a inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 1) as b group by month union select month, sum(total) as total from (select month, sum * price as total from (select month(departure) as month, route_id, sum(reserved_amount) as sum from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id where year(departure) = " + yearPick.Value.Year + " and seat_id = 2 group by month(departure), route_id) as a inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 2) as b group by month) as b group by month");
             kryptonDataGridView2.DataSource = yearReport;
             yearReport.Columns.Add(new DataColumn("percent", typeof(string)));
             yearPie.Series["Series1"].XValueMember = "month";
@@ -52,10 +52,9 @@ namespace Airline_Reservation_System
             }
             for (int i = 0; i < yearReport.Rows.Count; i++)
             {
-                yearReport.Rows[i]["percent"] = string.Format("{0:0.00}%", Convert.ToDouble(yearReport.Rows[i]["total"]) / total * 100);
+                yearReport.Rows[i]["Percent"] = string.Format("{0:0.00}%", Convert.ToDouble(yearReport.Rows[i]["total"]) / total * 100);
             }
-
-            DataTable monthReport = sqlFunction.getSqlDataTable("select flight_id, sum * price as total from (select flight.flight_id, route_id, sum(reserved_amount) as sum from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id where year(departure) = " + monthPick.Value.Year + " and month(departure) = " + monthPick.Value.Month + " and seat_id = 1 group by flight.flight_id, route_id)as a inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 1");
+            DataTable monthReport = sqlFunction.getSqlDataTable("select flight_id, sum(b.total) as total from (select flight_id, sum * price as total from (select flight.flight_id, route_id, sum(reserved_amount) as sum  from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id where year(departure) = " + monthPick.Value.Year + " and month(departure) = " + monthPick.Value.Month + " and seat_id = 1 group by flight.flight_id, route_id) as a inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 1 union select flight_id, sum * price as total from (select flight.flight_id, route_id, sum(reserved_amount) as sum from flight inner join seat_detail on flight.flight_id = seat_detail.flight_id where year(departure) = " + monthPick.Value.Year + " and month(departure) = " + monthPick.Value.Month + " and seat_id = 2 group by flight.flight_id, route_id) as a inner join ticket_price on a.route_id = ticket_price.route_id and seat_id = 2) as b group by flight_id");
             kryptonDataGridView1.DataSource = monthReport;
             monthReport.Columns.Add(new DataColumn("percent", typeof(string)));
             monthPie.Series["Series1"].XValueMember = "flight_id";
@@ -75,9 +74,15 @@ namespace Airline_Reservation_System
             }
             for (int i = 0; i < monthReport.Rows.Count; i++)
             {
-                monthReport.Rows[i]["percent"] = string.Format("{0:0.00}%", Convert.ToDouble(monthReport.Rows[i]["total"]) / total * 100);
+                monthReport.Rows[i]["Percent"] = string.Format("{0:0.00}%", Convert.ToDouble(monthReport.Rows[i]["total"]) / total * 100);
             }
-            
+            kryptonDataGridView1.Columns[0].Width = (int)(kryptonDataGridView1.Width * idWidth);
+            kryptonDataGridView1.Columns[1].Width = (int)(kryptonDataGridView1.Width * totalWidth);
+            kryptonDataGridView1.Columns[2].Width = (int)(kryptonDataGridView1.Width * percentWidth);
+            kryptonDataGridView2.Columns[0].Width = (int)(kryptonDataGridView2.Width * idWidth);
+            kryptonDataGridView2.Columns[1].Width = (int)(kryptonDataGridView2.Width * totalWidth);
+            kryptonDataGridView2.Columns[2].Width = (int)(kryptonDataGridView2.Width * percentWidth);
+
         }
         private void kryptonDateTimePicker1_ValueChanged(object sender, EventArgs e)
         {

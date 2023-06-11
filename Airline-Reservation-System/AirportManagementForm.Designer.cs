@@ -73,6 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Airport_dataGridView.ColumnHeadersHeight = 70;
+            this.Airport_dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.Airport_dataGridView.Location = new System.Drawing.Point(3, 103);
             this.Airport_dataGridView.Name = "Airport_dataGridView";
             this.Airport_dataGridView.RowHeadersVisible = false;

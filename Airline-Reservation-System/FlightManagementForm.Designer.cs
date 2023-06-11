@@ -60,6 +60,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flightDataGridView.ColumnHeadersHeight = 70;
+            this.flightDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.flightDataGridView.Location = new System.Drawing.Point(3, 103);
             this.flightDataGridView.Name = "flightDataGridView";
             this.flightDataGridView.RowHeadersVisible = false;

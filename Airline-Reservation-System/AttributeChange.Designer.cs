@@ -99,7 +99,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(255, 72);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Min Stop Over";
+            this.label2.Text = "Min Stop Over Time";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -112,7 +112,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(255, 72);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Max Stop Over";
+            this.label3.Text = "Max Stop Over Time";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
