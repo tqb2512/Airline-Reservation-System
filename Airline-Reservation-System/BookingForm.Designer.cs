@@ -457,6 +457,10 @@
             // 
             // stopOver
             // 
+            this.stopOver.AllowUserToAddRows = false;
+            this.stopOver.AllowUserToDeleteRows = false;
+            this.stopOver.AllowUserToResizeColumns = false;
+            this.stopOver.AllowUserToResizeRows = false;
             this.stopOver.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -464,8 +468,10 @@
             this.stopOver.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.stopOver.Location = new System.Drawing.Point(6, 34);
             this.stopOver.Name = "stopOver";
+            this.stopOver.RowHeadersVisible = false;
             this.stopOver.RowHeadersWidth = 72;
             this.stopOver.RowTemplate.Height = 37;
+            this.stopOver.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.stopOver.Size = new System.Drawing.Size(977, 337);
             this.stopOver.TabIndex = 0;
             // 
